@@ -1,0 +1,169 @@
+
+			<!-- Page Title -->
+			<section class="site-heading site-section-top">
+				<div class="header-section dashboard">
+					<div class="container">
+						<h1>Dashboard Pengguna</h1>
+					</div>
+				</div>
+			</section>
+			<!-- END Page Title -->
+
+            <!-- Company Info -->
+            <section class="site-section site-content-single">
+                <div class="container">
+                    <div class="row">
+						<div class="col-sm-12">
+                            <div class="site-block">
+                                <h3 class="site-heading"><strong>HAI!</strong>
+                                <small><p>Selamat kembali, <strong><?php echo $this->session->userdata('name');?></strong>. Kali terakhir daftar masuk anda adalah pada hari Selasa, September 2, 2014 pada 2:25pm</p></small></h3>
+								<hr>
+                            </div>
+							
+							<div class="site-block">
+                <h4 class="site-heading"><strong>Status Permohonan Baru</strong></h4>
+								<div class="table-responsive">
+									
+									<table class="table table-bordered table-striped">
+										<thead>
+											<tr class="warning">
+												<td align="center"><strong>Bil</strong></td>
+												<td><strong>Nombor Permohonan</strong></td>
+												<td align="center"><strong>Tarikh Permohonan</strong></td>
+												<td align="center"><strong>Alamat Tempat Permohonan</strong></td>
+												<td align="center"><strong>Status</strong></td>
+												<td align="center"><strong>Tindakan</strong></td>
+											</tr>
+										</thead>
+										<tbody>
+											<?php 
+											if( count($DASH_NEW) > 0 )
+											{
+												$no = 1;
+												foreach($DASH_NEW as $ROW)
+												{
+													if( $ROW->status == "Ditolak" )
+														$status = "<font color=red>Ditolak</font>";
+													else
+														$status = $ROW->status;
+														
+													echo "<tr>
+																	<td align=\"center\">".$no."</td>
+																	<td><a href=\"".base_url()."index.php/application_view/index/".$ROW->app_id."\"><strong>".$ROW->app_no."</strong></a></td>
+																	<td align=\"center\">".date('d/m/Y h:i A', strtotime($ROW->date_apply))."</td>
+																	<td>".$ROW->no_unit.", ".$ROW->home_name.", ".$ROW->street_name.",".$ROW->town_name."<br>".$ROW->postcode." ".get_parlimen_name($ROW->parlimen).", Kuala Lumpur.</td>
+																	<td align=\"center\"><b>".$status."</b></td>";
+																
+																if($ROW->status == 'Diterima')
+																{
+																	echo "<td align=\"center\"><a href=\"".base_url()."index.php/proof_application/index/".$ROW->app_id."\">Cetak Bukti Permohonan</a></td>";
+																}
+																elseif($ROW->status == 'Ditolak')
+																{
+																	if($ROW->appeal == 0)
+																	{
+																		echo "<td align=\"center\"><a href=\"".base_url()."index.php/appeal/index/".$ROW->app_id."\">Rayuan</a></td>";
+																	}
+																	else
+																	{
+																		echo "<td align=\"center\">Rayuan telah dibuat</td>";
+																	}
+																}
+																else
+																{
+																	echo "<td align=\"center\"></td>";
+																}
+																
+																
+													echo "</tr>";
+																
+													$no++;
+												}
+											}else
+											{
+													echo "<tr>
+																	<td colspan=\"6\">Tiada permohonan baru dibuat</td>
+																</tr>";
+											}
+											?>
+										</tbody>
+									</table>
+									<h4 class="site-heading"><strong>Senarai Lesen Sedia Ada</strong></h4>
+								<div class="table-responsive">
+									<?php 
+									$no_addr = 1;
+									if( count($ADDRESS) > 0 )
+									{
+										foreach($ADDRESS as $ADDR)
+										{
+											echo "<div><p><strong>Alamat #".$no_addr."</strong> :  ".$ADDR->no_unit.",&nbsp; ".ucwords(strtolower($ADDR->home_name)).",&nbsp; ".ucwords(strtolower($ADDR->street_name)).",&nbsp; ".ucwords(strtolower($ADDR->town_name)).",&nbsp; ".get_parlimen_name($ADDR->parlimen).",&nbsp".$ADDR->postcode.".</p></div>";
+												
+												echo "<table class=\"table table-bordered table-striped\">
+																<thead>
+																	<tr class=\"warning\">
+																		<td align=\"center\"><strong>Bil</strong></td>
+																		<td><strong>Nombor Permohonan</strong></td>
+																		<td align=\"center\"><strong>Tarikh Lesen Mula</strong></td>
+																		<td align=\"center\"><strong>Tarikh Lesen Tamat</strong></td>
+																		<td align=\"center\"><strong>Bilangan Anjing Peliharaan</strong></td>
+																		<td align=\"center\"><strong>No Lesen</strong></td>
+																	</tr>
+																</thead>
+																<tbody>";
+																$DETAILS_BY_ADDRESS = get_dashboard_already_license($ADDR->addr_id);
+																
+																if( count($DETAILS_BY_ADDRESS) > 0 )
+																{
+																	$no=1;
+																	foreach($DETAILS_BY_ADDRESS as $DTL)
+																	{
+																		$total_dog = get_total_dog($DTL->app_id);
+																		$lic = null;
+																		
+																		foreach($total_dog as $tdg)
+																		{
+																				$lic = get_dog_license($tdg->dog_id);
+																		}
+																		
+																			echo "<tr>
+																							<td align=\"center\">".$no."</td>
+																							<td><a href=\"#\"><strong>".$DTL->app_no."</strong></a></td>
+																							<td align=\"center\">".date('d/m/Y', strtotime($DTL->date_start))."</td>
+																							<td align=\"center\">31/12/".date('Y', strtotime($DTL->date_start))."</td>
+																							<td align=\"center\">".count($total_dog)."</td>
+																							<td align=\"center\">";
+																							if(count($lic) > 1)
+																								echo $lic[0]->license_no."<br>".$lic[1]->license_no;
+																							else
+																								echo $lic[0]->license_no;
+																				echo "</td>
+																						</tr>";
+																			$no++;
+																	}
+																}
+																else
+																{
+																			echo "<tr>
+																							<td colspan=\"6\">Tidak mempunyai lesen</td>
+																						</tr>";
+																}
+																		
+														echo "</tbody>
+															</table>";
+											
+											$no_addr++;
+										}
+									}
+									else
+									{
+										echo "Anda tidak memegang sebarang lesen anjing.";
+									}
+									?>
+								</div>
+              </div>
+							<hr>
+						</div>
+                    </div>
+                </div>
+            </section>
+            <!-- END Company Info -->

@@ -1,0 +1,67 @@
+<?php
+
+class Renew_Model extends CI_Model
+{
+		public function __construct()
+		{
+				parent::__construct();
+		}
+		
+
+		
+		public function authorization_profile()
+		{
+				$this->db->where('uid', $this->session->userdata('userid'));
+				$data = $this->db->get('profile');
+				
+				return $data->result();
+		}
+		
+		public function get_profile_user()
+		{
+				$this->db->where('uid', $this->session->userdata('userid'));
+		}
+		
+		public function get_all_info()
+		{
+			$this->db->select('*')
+							 ->from('profile')
+							 ->join('address', 'address.profile_id = profile.profile_id')
+							 ->where('profile.uid', $this->session->userdata('userid'));
+
+			$data = $this->db->get();
+			return $data->result();
+		}
+		
+		public function get_reasons()
+		{
+				$this->db->where_in('category', array('Application', 'Application|Dog'));
+				$reason = $this->db->get('reason_not_renew');
+				
+				return $reason->result();
+		}
+		
+		public function get_info_address($appID)
+		{
+				$this->db->select('*')
+								 ->from('application')
+								 ->join('address', 'application.addr_id = address.addr_id')
+								 ->where('application.app_id', $appID);
+								 
+				$data = $this->db->get();
+				
+				return $data->result();
+		}
+		
+		public function save_not_renew()
+		{
+				$arr = array(
+							'app_type' => 'NOT_RENEW',
+							'date_renew' => date('Y-m-d h:i:s'),
+							'renew_cause' => $this->input->post('reasons')
+				);
+				
+				$this->db->where('app_id', $this->input->post('appID'));
+				$this->db->update('application', $arr);
+		}
+}

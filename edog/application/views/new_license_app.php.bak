@@ -1,0 +1,695 @@
+            <!-- Page Title -->
+			<section class="site-heading site-section-top">
+				<div class="header-section dashboard">
+					<div class="container">
+						<h1>Permohonan Lesen Baru</h1>
+					</div>
+				</div>
+			</section>
+			<!-- END Page Title -->
+
+            <!-- Company Info -->
+            <section class="site-section site-content-single">
+                <div class="container">
+                    <div class="row">
+            <form action="<?php echo base_url();?>index.php/new_license_app/save_new_application" id="new-application" method="post" class="form-horizontal" enctype="multipart/form-data">
+						<div class="col-sm-12">
+							<div class="table-responsive">
+								<h3>Butiran Alamat Tempat Peliharaan</h3>
+								<br>
+									<div class="form-group">
+                                        <label class="col-md-4 control-label" for="address-select">Alamat </label>
+                                        <div class="col-md-8">
+                                            <p class="form-control-static"><?php echo $address[0]->no_unit.",&nbsp;".$address[0]->home_name.",&nbsp;".$address[0]->street_name.",&nbsp;".$address[0]->town_name.",&nbsp;".get_parlimen_name($address[0]->parlimen).",&nbsp;".$address[0]->postcode." Kuala Lumpur";?> </p>
+                                        </div>
+                                    </div>
+                <?php 
+                $doc = validate_doc_support($address[0]->home_type);
+                if($doc == 1)
+                {
+                ?>
+									<div class="form-group">
+										<label class="col-md-4 control-label" for="example-file-input">Muat Naik Dokumen Sokongan</label>
+										<div class="col-md-7">
+											<input type="file" id="doc_support" name="doc_support">
+										</div>
+									</div>
+								<?php 
+								}
+								?>
+								<input type="hidden" name="doc_type" id="doc_type" value="<?php echo $doc; ?>" />
+								<hr>
+						</div>
+					</div>
+						<?php 
+						$quota = get_license_quota($address[0]->home_space);
+						$totalLicense = get_available_license($address->addr_id);
+ 						$totalAvailable = $quota - $totalLicense[0]->totalLicense;
+ 						
+						if($totalAvailable == 1)
+						{
+							$dog_second = "disabled";
+						}
+						else
+						{
+							$dog_second = null;
+						}
+						
+						$temp_dog = get_temp_dog($address[0]->addr_id, 1);
+
+						$add_dog = null;
+						$detail_dog = null;
+						
+						//Data Anjing
+						$dog_type = null;
+						$colorDog = null;
+						$gender = null;
+						$weight = null;
+						$mandul = 0;
+						$microchip = null;
+						$owner_training = 0;
+						$dog_training = 0;
+						$pic_dog = null;
+						$dog_id = null;
+						
+						if( count($temp_dog) > 0 )
+						{
+							 $add_dog = "display:none";
+							 $verify = "display:block";
+							 
+							 $dog_type = get_dog_name($temp_dog[0]->dog_type);
+							 $gender = $temp_dog[0]->dog_gender;
+							 $weight = get_dogs_weight($temp_dog[0]->dog_weight);
+							 $mandul = $temp_dog[0]->dog_mandul;
+							 $microchip = $temp_dog[0]->dog_microchip;
+							 $owner_training = $temp_dog[0]->owner_training;
+							 $dog_training = $temp_dog[0]->dog_training;
+							 $pic_dog = $temp_dog[0]->pic_dog;
+							 $dog_id = $temp_dog[0]->no_dog;
+							 $color = $temp_dog[0]->dog_color;
+							 
+							 $colorExplode = explode("|", $color);
+							
+							 for($i=0; $i < count($colorExplode); $i++)
+							 {
+							 	 if($i > 0){
+							 	 	$colorDog .= ", ";
+							 	}
+							 	 	
+							 	 $colorDog .= $colorExplode[$i];
+
+							 }
+						}
+						else
+						{
+							 $detail_dog = "display:none";
+							 $verify = "display:none";
+						}
+					
+						?>
+						<!-- Butiran Anjing #1 -->
+						<div class="col-sm-6">
+							<div class="block bordered" id="add-detail-dog" style="<?php echo $add_dog; ?>">
+                  <!-- Anjing #1 Title -->
+                  <div class="block-title">
+                      <h2>Butiran Anjing Peliharaan <strong>#1</strong></h2>
+                  </div>
+                  <!-- END Title -->
+					
+                  <!-- Form Anjing #1 Content -->
+                  <div class="form-horizontal form-bordered">
+                                    
+									<div class="form-group form-actions">
+                                        <div class="col-md-8 col-md-offset-4">
+                                            <a href="#update-renew-1" id="add-first-dog" class="btn btn-square btn-sm btn-primary" data-toggle="modal" value="Update"><i class="fa fa-edit"></i> Isi Butiran Anjing Peliharaan</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END Form Anjing #2 Content -->
+                            </div>
+                            <!-- Butiran Anjing #1 -->
+														<div class="block bordered" id="detail-dog" style="<?php echo $detail_dog; ?>">
+                                <!-- Anjing #1 Title -->
+                                <div class="block-title">
+                                    <h2>Butiran Anjing Peliharaan <strong>#1</strong></h2>
+                                </div>
+                                <!-- END Title -->
+
+                                <!-- Form Anjing #1 Content -->
+                                <div class="form-horizontal form-bordered">
+																		<div class="form-group">
+																			<label class="col-md-4 control-label" for="val_username">Jenis / Baka</label>
+																			<div class="col-md-6">
+																				<p class="form-control-static"><?php echo $dog_type; ?></p>
+																			</div>
+																			
+																			<label class="col-md-4 control-label" for="val_username">Warna</label>
+																			<div class="col-md-6">
+																				<p class="form-control-static"><?php echo $colorDog; ?></p>
+																			</div>
+																			
+																			<label class="col-md-4 control-label">Jantina</label>
+																			<div class="col-md-6">
+																				<p class="form-control-static"><?php echo $gender; ?></p>
+																			</div>
+																			
+																			<label class="col-md-4 control-label" for="example-select">Berat</label>
+																			<div class="col-md-6">
+																				<p class="form-control-static"><?php echo $weight; ?></p>
+																			</div>
+																			
+																			<label class="col-md-4 control-label">Pemandulan</label>
+																			<div class="col-md-6">
+																				<p class="form-control-static">
+																				<?php
+																				if($mandul == 1)
+																					echo 'Ya';
+																				else
+																					echo 'Tidak';
+																				?></p>
+																			</div>
+																			
+																			<label class="col-md-4 control-label">Mikrocip</label>
+																			<div class="col-md-6">
+																				<p class="form-control-static"><?php echo $microchip; ?></p>
+																			</div>
+																			
+																			<label class="col-md-8 control-label">Pemilik telah menghadiri latihan atau kursus pemeliharaan haiwan.</label>
+																			<div class="col-md-3">
+																				<p class="form-control-static">
+																				<?php
+																				if($owner_training == 1)
+																					echo 'Ya';
+																				else
+																					echo 'Tidak';
+																				?>
+																				</p>
+																			</div>
+										
+																			<label class="col-md-8 control-label">Anjing telah menjalani latihan "good behaviour and obedience".</label>
+																				<div class="col-md-3">
+																					<p class="form-control-static">
+																					<?php
+																					if($dog_training == 1)
+																						echo 'Ya';
+																					else
+																						echo 'Tidak';
+																					?>
+																					</p>
+																				</div>
+																			</div>
+																			<div class="form-group">
+									                         <label class="col-md-4 control-label">Gambar Anjing</label>
+																							<div class="col-md-7">
+																								<p class="form-control-static"><img src="<?php echo base_url().$pic_dog;?>" width="100" height="100"></p>
+																							</div>
+									                    </div>
+									                    <input type="hidden" name="dogid" id="dogid" value="<?php echo $dog_id;?>" />
+									                    <input type="hidden" name="addrid" id="addrid" value="<?php echo $address[0]->addr_id;?>" />
+																			
+																			<div class="form-group form-actions">
+                                        <div class="col-md-8 col-md-offset-4">
+                                            <a href="#update-renew-2" data-id="<?php echo $address[0]->addr_id."|".$dog_id;?>" class="btn btn-square btn-sm btn-primary" data-toggle="modal" id="update-temp-dog" value="Update"><i class="fa fa-edit"></i> Kemaskini Maklumat</a>
+                                            <button type="button" class="btn btn-square btn-sm btn-warning" id="cancel-dog" value="Batal"><i class="fa fa-repeat"></i> Batal</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END Form Anjing #2 Content -->
+                            </div>
+						</div>
+						<!-- END Butiran Anjing #1 -->
+						<?php
+						
+						$temp_dog = get_temp_dog($address[0]->addr_id, 2);
+						
+						$add_dog = null;
+						$detail_dog = null;
+						
+						//Data Anjing
+						$dog_type = null;
+						$colorDog = null;
+						$gender = null;
+						$weight = null;
+						$mandul = 0;
+						$microchip = null;
+						$owner_training = 0;
+						$dog_training = 0;
+						$pic_dog = null;
+						$dog_id = null;
+						
+						if( count($temp_dog) > 0 )
+						{
+							 $add_dog = "display:none";
+							 //$verify = "display:block";
+							 
+							 $dog_type = get_dog_name($temp_dog[0]->dog_type);
+							 $gender = $temp_dog[0]->dog_gender;
+							 $weight = get_dogs_weight($temp_dog[0]->dog_weight);
+							 $mandul = $temp_dog[0]->dog_mandul;
+							 $microchip = $temp_dog[0]->dog_microchip;
+							 $owner_training = $temp_dog[0]->owner_training;
+							 $dog_training = $temp_dog[0]->dog_training;
+							 $pic_dog = $temp_dog[0]->pic_dog;
+							 $dog_id = $temp_dog[0]->no_dog;
+							 $color = $temp_dog[0]->dog_color;
+							 
+							 $colorExplode = explode("|", $color);
+							
+							 for($i=0; $i < count($colorExplode); $i++)
+							 {
+							 	 if($i > 0){
+							 	 	$colorDog .= ", ";
+							 	}
+							 	 	
+							 	 $colorDog .= $colorExplode[$i];
+
+							 }
+						}
+						else
+						{
+							 $detail_dog = "display:none";
+							 //$verify = "display:none";
+						}
+						?>
+						<!-- Butiran Anjing #2 -->
+						<div class="col-sm-6">
+							<div class="block bordered" id="add-detail-dog" style="<?php echo $add_dog; ?>">
+                  <!-- Anjing #1 Title -->
+                  <div class="block-title">
+                      <h2>Butiran Anjing Peliharaan <strong>#2</strong></h2>
+                  </div>
+                  <!-- END Title -->
+					
+                  <!-- Form Anjing #1 Content -->
+                  <div class="form-horizontal form-bordered">
+                                    
+									<div class="form-group form-actions">
+                                        <div class="col-md-8 col-md-offset-4">
+                                            <a href="#update-renew-1" id="add-second-dog" <?php echo $dog_second;?> class="btn btn-square btn-sm btn-primary" data-toggle="modal" value="Update"><i class="fa fa-edit"></i> Isi Butiran Anjing Peliharaan</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END Form Anjing #2 Content -->
+                            </div>
+                            <!-- Butiran Anjing #1 -->
+														<div class="block bordered" id="detail-dog" style="<?php echo $detail_dog; ?>">
+                                <!-- Anjing #1 Title -->
+                                <div class="block-title">
+                                    <h2>Butiran Anjing Peliharaan <strong>#<?php echo $dog_id; ?></strong></h2>
+                                </div>
+                                <!-- END Title -->
+
+                                <!-- Form Anjing #1 Content -->
+                                <div class="form-horizontal form-bordered">
+																		<div class="form-group">
+																			<label class="col-md-4 control-label" for="val_username">Jenis / Baka</label>
+																			<div class="col-md-6">
+																				<p class="form-control-static"><?php echo $dog_type; ?></p>
+																			</div>
+																			
+																			<label class="col-md-4 control-label" for="val_username">Warna</label>
+																			<div class="col-md-6">
+																				<p class="form-control-static"><?php echo $colorDog; ?></p>
+																			</div>
+																			
+																			<label class="col-md-4 control-label">Jantina</label>
+																			<div class="col-md-6">
+																				<p class="form-control-static"><?php echo $gender; ?></p>
+																			</div>
+																			
+																			<label class="col-md-4 control-label" for="example-select">Berat</label>
+																			<div class="col-md-6">
+																				<p class="form-control-static"><?php echo $weight; ?></p>
+																			</div>
+																			
+																			<label class="col-md-4 control-label">Pemandulan</label>
+																			<div class="col-md-6">
+																				<p class="form-control-static">
+																				<?php
+																				if($mandul == 1)
+																					echo 'Ya';
+																				else
+																					echo 'Tidak';
+																				?></p>
+																			</div>
+																			
+																			<label class="col-md-4 control-label">Mikrocip</label>
+																			<div class="col-md-6">
+																				<p class="form-control-static"><?php echo $microchip; ?></p>
+																			</div>
+																			
+																			<label class="col-md-8 control-label">Pemilik telah menghadiri latihan atau kursus pemeliharaan haiwan.</label>
+																			<div class="col-md-3">
+																				<p class="form-control-static">
+																				<?php
+																				if($owner_training == 1)
+																					echo 'Ya';
+																				else
+																					echo 'Tidak';
+																				?>
+																				</p>
+																			</div>
+										
+																			<label class="col-md-8 control-label">Anjing telah menjalani latihan "good behaviour and obedience".</label>
+																				<div class="col-md-3">
+																					<p class="form-control-static">
+																					<?php
+																					if($dog_training == 1)
+																						echo 'Ya';
+																					else
+																						echo 'Tidak';
+																					?>
+																					</p>
+																				</div>
+																			</div>
+																			<div class="form-group">
+									                                        <label class="col-md-4 control-label">Gambar Anjing</label>
+																			<div class="col-md-7">
+																				<p class="form-control-static"><img src="<?php echo base_url().$pic_dog;?>" width="100" height="100"></p>
+																			</div>
+									                                    </div>
+																			<div class="form-group form-actions">
+                                        <div class="col-md-8 col-md-offset-4">
+                                            <a href="#update-renew-2" data-id="<?php echo $address[0]->addr_id."|".$dog_id;?>" class="btn btn-square btn-sm btn-primary" data-toggle="modal" id="update-temp-dog2" value="Update"><i class="fa fa-edit"></i> Kemaskini Maklumat</a>
+                                            <button type="reset" class="btn btn-square btn-sm btn-warning" id="add-dog" value="Batal"><i class="fa fa-repeat"></i> Batal</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END Form Anjing #2 Content -->
+                            </div>
+						</div>
+						<!-- END Butiran Anjing #2 -->
+						
+						<div class="col-sm-12" id="verification-opt" style="<?php echo $verify; ?>">
+							<hr>
+							<div class="form-horizontal form-bordered">
+								<div class="form-group form-actions">
+									<div class="col-md-12">
+										<div class="checkbox">
+											<label for="val_dogcolor_blk">
+												<input type="checkbox" id="agreed_term" name="agreed_term" value="option1" > Saya bersetuju semua peruntukan dibawah Undang-undang Kecil Pelesenan Anjing dan Rumah Pembiakan Anjing (Wilayah Persekutuan)
+											</label>
+											<!--<input type="submit" />-->
+											<button type="button" class="btn btn-square btn-sm btn-primary" id="submit-dog" value="Simpan"><i class="fa fa-save"></i> Hantar Permohonan</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+							</form>
+
+							</div>
+						</div>
+						</div>
+						
+                    </div>
+            </section>
+            <!-- END Company Info -->
+			
+					<!-- Modal Register License #1 -->
+        <div id="update-renew-1" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+					<div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Butiran Anjing Peliharaan<strong> #1</strong></h4>
+                    </div>
+					<div class="modal-body">
+						<form id="form-reg-dog" action="<?php echo base_url();?>index.php/new_license_app/save_temporary" method="post" class="form-horizontal" enctype="multipart/form-data">
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="val_dogtype">Jenis / Baka <span class="text-danger">*</span></label>
+								<div class="col-md-6">
+									<select id="dog_type" name="dog_type" class="form-control wizard-ignore" size="1">
+										<option value="0">Please select</option>
+										<?php 
+										$dog_type = get_dog_type();
+										
+										foreach($dog_type as $dt)
+										{	
+											echo "<option value=\"".$dt->ddid."\">".$dt->detail."</option>";
+										}
+										?>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="val_dogcolor">Warna <span class="text-danger">*</span></label>
+								
+								<div class="col-md-6">
+									<div class="checkbox">
+										<label for="val_dogcolor_blk">
+											<input type="checkbox" id="val_dogcolor_blk" name="val_dogcolor[]" value="Hitam" class="wizard-ignore"  > Hitam
+										</label>
+									</div>
+									<div class="checkbox">
+										<label for="val_dogcolor_wht">
+											<input type="checkbox" id="val_dogcolor_wht" name="val_dogcolor[]" value="Putih" class="wizard-ignore"  > Putih
+										</label>
+									</div>
+									<div class="checkbox">
+										<label for="val_dogcolor_brown">
+											<input type="checkbox" id="val_dogcolor_brown" name="val_dogcolor[]" value="Coklat" class="wizard-ignore" > Coklat
+										</label>
+									</div>
+									<div class="checkbox">
+										<label for="val_dogcolor_etc">
+											<input type="checkbox" id="val_dogcolor_etc_opt" name="val_dogcolor_etc_opt" value="Lain" class="wizard-ignore" > Lain-lain
+										</label>
+									</div>
+									<input type="text" id="val_dogcolor_etc" disabled="disabled" name="val_dogcolor[]" class="form-control wizard-ignore" placeholder="Sila nyatakan warna anjing, jika lain-lain.." >
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label">Jantina</label>
+								<div class="col-md-6">
+									<label class="radio-inline" for="example-inline-radio3">
+										<input type="radio" id="val_gender1" name="val_gender" value="Jantan" class="wizard-ignore" > Jantan
+									</label>
+									<label class="radio-inline" for="example-inline-radio4">
+										<input type="radio" id="val_gender2" name="val_gender" value="Betina" class="wizard-ignore" > Betina
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="example-select">Berat</label>
+								<div class="col-md-6">
+									<select id="val_weight" name="val_weight" class="form-control wizard-ignore" size="1">
+										<option value="0">Please select</option>
+										<?php 
+										$dog_weight = get_dog_weight();
+										foreach($dog_weight as $dw)
+										{
+											echo "<option value=\"".$dw->dwid."\">".$dw->dog_weight."</option>";
+										}
+										?>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label">Pemandulan</label>
+								<div class="col-md-6">
+									<label class="radio-inline" for="example-inline-radio5">
+										<input type="radio" id="val_mandul1" name="val_mandul" value="1" class="wizard-ignore" > Ya
+									</label>
+									<label class="radio-inline" for="example-inline-radio6">
+										<input type="radio" id="val_mandul2" name="val_mandul" value="0" class="wizard-ignore"  > Tidak
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label">Mikrocip</label>
+								<div class="col-md-6">
+									<input type="text" id="val_microchip" name="val_microchip" class="form-control wizard-ignore" placeholder="SIRI-9999-99" >
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-7 control-label col-md-offset-1">Pemilik telah menghadiri latihan atau kursus pemeliharaan haiwan.</label>
+								<div class="col-md-3">
+									<label class="radio-inline" for="example-inline-radio7">
+										<input type="radio" id="owner_training" name="owner_training" value="option1" class="wizard-ignore" > Ya
+									</label>
+									<label class="radio-inline" for="example-inline-radio8">
+										<input type="radio" id="owner_training" name="owner_training" value="option2" class="wizard-ignore" > Tidak
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-7 control-label col-md-offset-1">Anjing telah menjalani latihan "good behaviour and obedience".</label>
+								<div class="col-md-3">
+									<label class="radio-inline" for="example-inline-radio9">
+										<input type="radio" id="dog_training1" name="dog_training" value="option1" class="wizard-ignore" > Ya
+									</label>
+									<label class="radio-inline" for="example-inline-radio10">
+										<input type="radio" id="dog_training2" name="dog_training" value="option2" class="wizard-ignore" > Tidak
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="example-file-input">Gambar Anjing</label>
+								<div class="col-md-7">
+									<input type="file" id="pic_dog" name="pic_dog" />
+								</div>
+							</div>
+							<input type="hidden" name="dogID" id="dogID" value="" />
+							<input type="hidden" name="addrID" id="addrID" value="<?php echo $address[0]->addr_id; ?>" />
+							<!-- Form Buttons -->
+							<div class="form-group form-actions">
+								<div class="col-md-8 col-md-offset-4">
+									<button type="reset" class="btn btn-square btn-sm btn-warning" id="add-dog" value="Padam"><i class="fa fa-repeat"></i> Padam</button>
+									<button type="submit" class="btn btn-square btn-sm btn-primary" id="add-dog" value="Simpan"><i class="fa fa-save"></i> Simpan</button>
+								</div>
+							</div>
+							<!-- END Form Buttons -->
+						</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END Modal Register License #1-->
+		
+				<!-- Modal Update Details -->
+        <div id="update-renew-2" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+					<div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Butiran Anjing Peliharaan<strong> #<span id="no-dog"></span></strong></h4>
+                    </div>
+					<div class="modal-body">
+						<form id="form-not-renew" action="<?php echo base_url();?>index.php/new_license_app/update_temporary_dog" method="post" class="form-horizontal" enctype="multipart/form-data">
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="val_dogtype">Jenis / Baka <span class="text-danger">*</span></label>
+								<div class="col-md-6">
+									<select id="dog_type" name="dog_type" class="form-control wizard-ignore" size="1">
+										<option value="0">Please select</option>
+										<?php 
+										$dog_type = get_dog_type();
+										
+										foreach($dog_type as $dt)
+										{	
+											echo "<option value=\"".$dt->ddid."\">".$dt->detail."</option>";
+										}
+										?>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="val_dogcolor">Warna <span class="text-danger">*</span></label>
+								<div class="col-md-6">
+									<div class="checkbox">
+										<label for="val_dogcolor_blk">
+											<input type="checkbox" id="val_dogcolor_blk" name="val_dogcolor[]" value="Hitam" class="wizard-ignore"> Hitam
+										</label>
+									</div>
+									<div class="checkbox">
+										<label for="val_dogcolor_wht">
+											<input type="checkbox" id="val_dogcolor_wht" name="val_dogcolor[]" value="Putih" class="wizard-ignore"> Putih
+										</label>
+									</div>
+									<div class="checkbox">
+										<label for="val_dogcolor_brown">
+											<input type="checkbox" id="val_dogcolor_brown" name="val_dogcolor[]" value="Coklat" class="wizard-ignore"> Coklat
+										</label>
+									</div>
+									<div class="checkbox">
+										<label for="val_dogcolor_etc">
+											<input type="checkbox" id="val_dogcolor_etc_opt" name="val_dogcolor_etc_opt" value="Lain" class="wizard-ignore"> Lain-lain
+										</label>
+									</div>
+									<input type="text" id="val_dogcolor_etc" disabled name="val_dogcolor[]" class="form-control wizard-ignore" placeholder="Sila nyatakan warna anjing, jika lain-lain..">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label">Jantina</label>
+								<div class="col-md-6">
+									<label class="radio-inline" for="example-inline-radio3">
+										<input type="radio" id="val_gender1" name="val_gender" value="Jantan" class="wizard-ignore"> Jantan
+									</label>
+									<label class="radio-inline" for="example-inline-radio4">
+										<input type="radio" id="val_gender2" name="val_gender" value="Betina" class="wizard-ignore"> Betina
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="example-select">Berat</label>
+								<div class="col-md-6">
+									<select id="val_weight" name="val_weight" class="form-control wizard-ignore" size="1">
+										<option value="0">Please select</option>
+										<?php 
+										$dog_weight = get_dog_weight();
+										foreach($dog_weight as $dw)
+										{
+											echo "<option value=\"".$dw->dwid."\">".$dw->dog_weight."</option>";
+										}
+										?>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label">Pemandulan</label>
+								<div class="col-md-6">
+									<label class="radio-inline" for="example-inline-radio5">
+										<input type="radio" id="val_mandul1" name="val_mandul" value="1" class="wizard-ignore"> Ya
+									</label>
+									<label class="radio-inline" for="example-inline-radio6">
+										<input type="radio" id="val_mandul2" name="val_mandul" value="0" class="wizard-ignore"> Tidak
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label">Mikrocip</label>
+								<div class="col-md-6">
+									<input type="text" id="val_microchip" name="val_microchip" class="form-control wizard-ignore" placeholder="SIRI-9999-99">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-7 control-label col-md-offset-1">Pemilik telah menghadiri latihan atau kursus pemeliharaan haiwan.</label>
+								<div class="col-md-3">
+									<label class="radio-inline" for="example-inline-radio7">
+										<input type="radio" id="owner_training1" name="owner_training" value="1" class="wizard-ignore"> Ya
+									</label>
+									<label class="radio-inline" for="example-inline-radio8">
+										<input type="radio" id="owner_training2" name="owner_training" value="0" class="wizard-ignore"> Tidak
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-7 control-label col-md-offset-1">Anjing telah menjalani latihan "good behaviour and obedience".</label>
+								<div class="col-md-3">
+									<label class="radio-inline" for="example-inline-radio9">
+										<input type="radio" id="dog_training1" name="dog_training" value="1" class="wizard-ignore"> Ya
+									</label>
+									<label class="radio-inline" for="example-inline-radio10">
+										<input type="radio" id="dog_training2" name="dog_training" value="0" class="wizard-ignore"> Tidak
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="example-file-input">Gambar Anjing</label>
+								<div class="col-md-7">
+									<img src="" id="imgDog" width="100" height="100" />
+									<input type="hidden" name="loc_pic" id="loc_pic" value="" />
+									<input type="file" id="pic_dog" name="pic_dog" />
+								</div>
+							</div>
+							<input type="hidden" name="dogID" id="dogID" value="" />
+							<input type="hidden" name="addrID" id="addrID" value="" />
+							<!-- Form Buttons -->
+							<div class="form-group form-actions">
+								<div class="col-md-8 col-md-offset-4">
+									<!--<button type="reset" class="btn btn-square btn-sm btn-warning" id="add-dog" value="Padam"><i class="fa fa-repeat"></i> Padam</button>-->
+									<button type="submit" class="btn btn-square btn-sm btn-primary" id="add-dog" value="Simpan"><i class="fa fa-save"></i> Kemaskini</button>
+								</div>
+							</div>
+							<!-- END Form Buttons -->
+						</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END Modal Update Details #2-->
+
+
+        <!-- Load and execute javascript code used only in this page -->
+        <script src="<?php echo base_url();?>js/pages/formsWizard.js"></script>
+        <script>$(function(){ FormsWizard.init(); });</script>

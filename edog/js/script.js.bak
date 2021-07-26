@@ -1,0 +1,491 @@
+//External Javascript
+var path = $(location).attr('pathname');
+var base_url = $(location).attr('protocol')+'//'+$(location).attr('hostname')+'/'+path.split("/")[1]+'/';
+
+jQuery.fn.ForceNumericOnly =
+function()
+{
+    return this.each(function()
+    {
+        $(this).keydown(function(e)
+        {
+            var key = e.charCode || e.keyCode || 0;
+            // allow backspace, tab, delete, enter, arrows, numbers and keypad numbers ONLY
+            // home, end, period, and numpad decimal
+            return (
+                key == 8 || 
+                key == 9 ||
+                key == 13 ||
+                key == 46 ||
+                key == 110 ||
+                key == 190 ||
+                (key >= 35 && key <= 40) ||
+                (key >= 48 && key <= 57) ||
+                (key >= 96 && key <= 105));
+        });
+    });
+};
+
+$(function(){
+		
+	$( "#postcode" ).ForceNumericOnly();
+	$( "#phone" ).ForceNumericOnly();
+	
+	$( "#btnLogin" ).click(function(){
+		if( $("#login-user").val() == "" || $( "#login-password" ).val() == "" ){
+			alert( "Sila penuhkan ID Pengguna atau Katalaluan !" );
+		}else{
+			
+			$( "#form-login" ).ajaxSubmit({
+				 success : function(data){
+				 		if(data == 1)
+				 		{
+				 			window.location.href = "dashboard_user";
+				 		}
+				 		else if(data == 2)
+				 		{
+				 			window.location.href = "dashboard_jkas";
+				 		}
+				 		else
+				 		{
+				 			alert( "ID Pengguna atau Katalaluan anda tidak sah !" );
+				 		}
+				 }
+			});
+			
+		}
+	});
+	
+	$( "#new-license" ).click(function(){
+		window.location.href = "new_license";
+	});
+	
+	$( "#user-dashboard" ).click(function(){
+		window.location.href = "dashboard_user";
+	});
+
+	$( "#app_name, #register-name" ).keyup( function() {
+		 this.value = this.value.toUpperCase();
+	});
+	
+	$( "#btn-form-register" ).click(function() {
+//			if( $( "#register-password" ).val() != $( "#register-password-verify" ).val() )
+//			{
+//					alert( "Katalaluan anda tidak sepadan. Sila cuba lagi." );
+//			}else
+//				{
+						$( "#form-register" ).attr( 'action', 'login/register_user' ); 
+						$( "#form-register" ).ajaxSubmit({
+								success : function(data)
+								{
+									if( data == 1 )
+									{
+										window.location = "index.php";
+									}
+								}
+						})
+				//}
+	});
+	
+	$( "#option-address" ).change(function(){
+			
+			var user_option = $("#option-address").val();
+	
+			if( user_option == 0 )
+			{
+				$( ".view-address" ).html("<font color='red'>Sila pilih alamat di atas untuk paparan senarai lesen</font>");
+			}
+			else
+				{
+					$.get('already_license/view_address/'+user_option, function(data){
+							$( ".view-address" ).html(data);
+					});
+				}
+	});
+	
+	$( "#update-dog" ).click(function(){
+			alert("Alamat anda berjaya dikemaskini.");
+	});
+	
+	$( "#val_dogcolor_etc_opt" ).click(function(){
+		 if( $("#val_dogcolor_etc_opt" ).is( ':checked' ) )
+		 {
+				$( "#val_dogcolor_etc" ).prop("disabled", false);
+		 }
+		 else
+		 	{
+		 			$( "#val_dogcolor_etc" ).prop("disabled", true);
+		 	}
+	});
+	
+	$( "#add-first-dog" ).click(function(){
+			$( "#dogID" ).val(1);
+	});
+	$( "#add-second-dog" ).click(function(){
+			$( "#dogID" ).val(2);
+	});
+	
+	$( "#update-temp-dog, #update-temp-dog2" ).click(function(){
+		
+		var ids = $(this).data('id');
+		var idsplit = ids.split("|");
+		
+		$.get(base_url+path.split("/")[2]+'/new_license_app/get_data_temporary_dog/'+idsplit[0]+'/'+idsplit[1], function(data){
+				var dataSplit = data.split("|");
+				
+				$( "#update-renew-2 #no-dog" ).html(idsplit[1]);
+				$( "#update-renew-2 .modal-body #dog_type" ).val(dataSplit[0]);
+				$( "#update-renew-2 .modal-body #val_dogcolor" ).val(dataSplit[1]);
+				$( "#update-renew-2 .modal-body #val_weight" ).val(dataSplit[3]);
+				$( "#update-renew-2 .modal-body #val_microchip" ).val(dataSplit[5]);
+				$( "#update-renew-2 .modal-body #loc_pic" ).val(dataSplit[8]);
+				$( "#update-renew-2 .modal-body #imgDog" ).attr("src", base_url+dataSplit[8]);
+				$( "#update-renew-2 .modal-body #dogID" ).val(idsplit[1]);
+				$( "#update-renew-2 .modal-body #addrID" ).val(idsplit[0]);
+				
+				var colorSplit = dataSplit[1].split("|");
+				var standardColor = [];
+				standardColor.push('Hitam');
+				standardColor.push('Putih');
+				standardColor.push('Coklat');
+				
+				if($.inArray('Hitam', colorSplit) != -1)
+				{
+					$( "#update-renew-2 .modal-body input:checkbox[id=val_dogcolor_blk]" ).attr("checked", true);
+				}
+				
+				if($.inArray('Putih', colorSplit) != -1)
+				{
+					$( "#update-renew-2 .modal-body input:checkbox[id=val_dogcolor_wht]" ).attr("checked", true);
+				}
+				
+				if($.inArray('Coklat', colorSplit) != -1)
+				{
+					$( "#update-renew-2 .modal-body input:checkbox[id=val_dogcolor_brown]" ).attr("checked", true);
+				}
+				
+				for(i=0; i < colorSplit.length; i++)
+				{
+						if($.inArray(colorSplit[i], standardColor) == -1)
+						{
+								$( "#update-renew-2 .modal-body input:checkbox[id=val_dogcolor_etc_opt]" ).attr("checked", true);
+								$( "#update-renew-2 .modal-body #val_dogcolor_etc" ).val(colorSplit[i]);
+						}
+				}
+						
+				
+				//--------------Jantina-----------------//
+				if(dataSplit[2] == 1)
+				{
+					$( "#update-renew-2 .modal-body input:radio[id=val_gender1]" ).attr("checked", true);
+				}
+				else
+					{
+						$( "#update-renew-2 .modal-body input:radio[id=val_gender2]" ).attr("checked", true);
+					}
+					
+				//------------Mandul------------------//
+				if(dataSplit[4] == 1)
+				{
+					$( "#update-renew-2 .modal-body input:radio[id=val_mandul1]" ).attr("checked", true);
+				}
+				else
+					{
+						$( "#update-renew-2 .modal-body input:radio[id=val_mandul2]" ).attr("checked", true);
+					}
+				
+				//-------------Latihan Pemilik-------------//
+				if(dataSplit[6] == 1)
+				{
+					$( "#update-renew-2 .modal-body input:radio[id=owner_training1]" ).attr("checked", true);
+				}
+				else
+					{
+						$( "#update-renew-2 .modal-body input:radio[id=owner_training2]" ).attr("checked", true);
+					}
+				
+				//---------------Latihan Anjing----------------//
+				if(dataSplit[7] == 1)
+				{
+					$( "#update-renew-2 .modal-body input:radio[id=dog_training1]" ).attr("checked", true);
+				}
+				else
+					{
+						$( "#update-renew-2 .modal-body input:radio[id=dog_training2]" ).attr("checked", true);
+					}
+		});
+	});
+	
+	$( "#cancel-dog" ).click(function(data){
+			var dogid = $( "#dogid" ).val();
+			var addrid = $( "#addrid" ).val();
+			
+			if( confirm("Anda pasti untuk batalkan maklumat anjing ini ?") )
+			{
+				$.get(base_url+path.split("/")[2]+"/new_license_app/cancel_temporary_dog/"+dogid+"/"+addrid, function(data){
+					if( data == 1 )
+					{
+						alert("Maklumat anjing telah berjaya dibatalkan");
+						location.reload();
+					}
+				});
+			}
+			else
+				{
+					return false;
+				}
+	});
+	
+	$( "#submit-dog" ).click(function(data){
+
+			if( $( "#agreed_term" ).is(":checked") )
+			{
+				if( $( "#doc_type" ).val() == 1 )
+				{
+					$( "input[type='file'][name='doc_support']" ).each(function(){
+						if($(this).val().length == 0)
+						{
+							alert("Sila muat naik dokumen sokongan anda !");
+							return false;
+						}
+						else
+							{
+								$( "#new-application" ).ajaxSubmit({
+									success : function(data){
+										alert("Permohonan anda berjaya dihantar. Proses saringan permohonan akan dilakukan dalam masa 5 hari waktu bekerja. Sila cetak penyata permohonan untuk tujuan pembayaran jika permohonan anda telah diterima. Terima kasih");
+										window.location.href = base_url+'index.php/dashboard_user';
+									}
+								});
+							}
+					});
+				}
+				else
+					{
+						
+						$( "#new-application" ).ajaxSubmit({
+									success : function(data){
+										alert("Permohonan anda telah berjaya dihantar. Sila cetak penyata permohonan untuk tujuan pembayaran jika permohonan anda telah diterima. Terima kasih");
+										window.location.href = base_url+'index.php/dashboard_user';
+									}
+								});
+					}
+			}
+			else
+				{
+					alert("Sila tandakan persetujuan anda !");
+					return false;
+				}
+	});
+	
+		var settings = {
+          barWidth: 1,
+					barHeight: 30,
+					moduleSize: 5,
+					showHRI: true,
+					addQuietZone: true,
+					marginHRI: 5,
+					bgColor: "#FFFFFF",
+					color: "#000000",
+					fontSize: 10,
+					output: "css",
+					posX: 0,
+					posY: 0
+        };
+
+	$("#barcode1, #barcode2").barcode(
+		$( "#app-no" ).val(), // Value barcode (dependent on the type of barcode)
+		"code39" // type (string)
+		);
+		
+	$( "#print_receipt" ).click(function(){
+		window.open( base_url+"index.php/receipt/index/"+$("#appid").val() );
+	});
+	
+	$( "#appeal-app" ).click(function(){
+		if( $( "#val_verify" ).is(":checked") )
+		{
+			$( "#submit-appeal" ).ajaxSubmit({
+					success : function(data){
+						 alert("Permohonan rayuan anda berjaya dihantar. Proses saringan permohonan akan dilakukan dalam masa 5 hari waktu bekerja. Sila cetak penyata permohonan untuk tujuan pembayaran jika permohonan anda telah diterima. Terima kasih");
+						 window.location.href = base_url+'index.php/dashboard_user';
+					}
+			});
+		}
+		else
+			{
+				alert("Sila tandakan persetujuan anda !");
+				return false;
+			}
+	});
+	
+	$( "#not-renew-app" ).click(function(data){
+		var appID = $(this).data('id');
+		
+		$.get("renew/get_address/"+appID, function(data){
+			var dataSplit = data.split("|");
+				$( "#address" ).html(dataSplit[0]);
+				$( "#no-dog" ).html(dataSplit[1]);
+				$( "#appID" ).val(appID);
+		});
+	});
+	
+	$( "#submit-not-renew" ).click(function(data){
+		if( $("#reasons").val() == 0 )
+		{
+			alert("Sila pilih sebab tidak memperbaharui lesen !");
+			return false;
+		}
+		else
+			{
+				if(confirm('Anda pasti untuk tidak memperbaharui lesen ini ?'))
+				{
+						$( "#form-not-renew" ).ajaxSubmit({
+								success : function(data){
+									alert('Lesen anda telah berjaya dihantar untuk tidak diperbaharui. Terima kasih.');
+									location.reload();
+								}	
+						});
+				}
+				else
+					{
+							return false;
+					}
+			}
+	});
+	
+	$( "#tick-not-renew1" ).click(function(){
+		if( $(this).is(":checked") )
+		{
+			 $( "#list-reason1" ).css("display", "block");
+			 $( "#update-renew1" ).attr("disabled", true);
+		}
+		else
+			{
+				$( "#list-reason1" ).css("display", "none");
+				$( "#update-renew1" ).attr("disabled", false);
+			}
+	});
+	
+	$( "#tick-not-renew2" ).click(function(){
+		alert();
+		if( $(this).is(":checked") )
+		{
+			 $( "#list-reason2" ).css("display", "block");
+			 $( "#update-renew2" ).attr("disabled", true);
+		}
+		else
+			{
+				$( "#list-reason2" ).css("display", "none");
+				$( "#update-renew2" ).attr("disabled", false);
+			}
+	});
+});	
+
+	
+function del_address( addrID )
+{
+		$.get("manage_profile/application_exists/"+addrID, function(data){
+			 if(data > 0)
+			 {
+			 		alert("Maaf, alamat ini tidak dapat dipadamkan kerana telah mengandungi maklumat pendaftaran lesen anjing.");
+			 		return false;
+			 }
+			 else
+			 	{
+			 		 if( confirm("Anda pasti untuk padamkan alamat ini ?") )
+			 		 {
+			 		 		$.get("manage_profile/delete_address/"+addrID, function(data){
+			 		 			alert('Alamat telah berjaya dipadamkan');				 		 			
+			 		 			location.reload();
+			 		 		});
+			 		 		
+			 		 }
+			 		 else
+			 		 	{
+			 		 			return false;
+			 		 	}
+			 	}
+		});
+}
+
+function edit_address(addrID)
+{
+	$("#edit-address").modal("toggle");
+	
+	$("#edit-address .modal-body #val_no_unit").prop("disabled", false);
+	$("#edit-address .modal-body #val_name_house").prop("disabled", false);
+ 	$("#edit-address .modal-body #val_street").prop("disabled", false);
+ 	$("#edit-address .modal-body #val_town").prop("disabled", false);
+ 	$("#edit-address .modal-body #val_postcode").prop("disabled", false);
+ 	$("#edit-address .modal-body #val_parlimen").prop("disabled", false);
+ 	$("#edit-address .modal-body #val_house_type").prop("disabled", false);
+ 	$("#edit-address .modal-body #house_space").prop("disabled", false);
+ 	$("#edit-address .modal-body input:radio[name=house_dog]").prop("disabled", false);
+ 	$("#edit-address .modal-body #update-dog").show();
+		 
+	$.get("manage_profile/get_address_edit/"+addrID, function(data){
+		 var dataSplit = data.split("|");
+		 
+		 $("#edit-address .modal-body #val_no_unit").val(dataSplit[0]);
+		 $("#edit-address .modal-body #val_name_house").val(dataSplit[1]);
+		 $("#edit-address .modal-body #val_street").val(dataSplit[2]);
+		 $("#edit-address .modal-body #val_town").val(dataSplit[3]);
+		 $("#edit-address .modal-body #val_postcode").val(dataSplit[4]);
+		 $("#edit-address .modal-body #val_parlimen").val(dataSplit[5]);
+		 $("#edit-address .modal-body #val_house_type").val(dataSplit[6]);
+		 $("#edit-address .modal-body #house_space").val(dataSplit[7]);
+		 $("#edit-address .modal-body #addressID").val(addrID);
+		 
+		 if( dataSplit[8] == 0 )
+		 {
+		 		$("#edit-address .modal-body input:radio[id=house_dog2]").attr("checked", true);
+		 }
+		 else if( dataSplit[8] == 1 )
+		 	{
+		 		$("#edit-address .modal-body input:radio[id=house_dog1]").attr("checked", true);
+		 	}
+		 
+	});
+}
+
+function view_address(addrID)
+{
+	$("#edit-address").modal("toggle");
+	
+	$.get("manage_profile/get_address_edit/"+addrID, function(data){
+		 var dataSplit = data.split("|");
+		 
+		 $("#edit-address .modal-body #val_no_unit").val(dataSplit[0]);
+		 $("#edit-address .modal-body #val_name_house").val(dataSplit[1]);
+		 $("#edit-address .modal-body #val_street").val(dataSplit[2]);
+		 $("#edit-address .modal-body #val_town").val(dataSplit[3]);
+		 $("#edit-address .modal-body #val_postcode").val(dataSplit[4]);
+		 $("#edit-address .modal-body #val_parlimen").val(dataSplit[5]);
+		 $("#edit-address .modal-body #val_house_type").val(dataSplit[6]);
+		 $("#edit-address .modal-body #house_space").val(dataSplit[7]);
+		 $("#edit-address .modal-body #addressID").val(addrID);
+		 
+		 if( dataSplit[8] == 0 )
+		 {
+		 		$("#edit-address .modal-body input:radio[id=house_dog2]").attr("checked", true);
+		 }
+		 else if( dataSplit[8] == 1 )
+		 	{
+		 		$("#edit-address .modal-body input:radio[id=house_dog1]").attr("checked", true);
+		 	}
+		 
+	});
+	
+		 $("#edit-address .modal-body #val_no_unit").prop("disabled", true);
+		 $("#edit-address .modal-body #val_name_house").prop("disabled", true);
+		 $("#edit-address .modal-body #val_street").prop("disabled", true);
+		 $("#edit-address .modal-body #val_town").prop("disabled", true);
+		 $("#edit-address .modal-body #val_postcode").prop("disabled", true);
+		 $("#edit-address .modal-body #val_parlimen").prop("disabled", true);
+		 $("#edit-address .modal-body #val_house_type").prop("disabled", true);
+		 $("#edit-address .modal-body #house_space").prop("disabled", true);
+		 $("#edit-address .modal-body input:radio[name=house_dog]").prop("disabled", true);
+		 $("#edit-address .modal-body #update-dog").hide();
+		 
+		 
+}

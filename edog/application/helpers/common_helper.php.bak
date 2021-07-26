@@ -1,0 +1,328 @@
+<?php
+
+/***************Common Helper*************************/
+
+if( ! function_exists('get_users_name') )
+{
+	function get_users_name($userid)
+	{
+		$CI =& get_instance();
+		
+		$CI->db->where( 'uid', $userid );
+		$user = $CI->db->get( 'users' );
+		$row = $user->result();
+		
+		return $row[0]->name;
+	}
+}
+
+if( ! function_exists('get_application_no') )
+{
+	function get_application_no()
+	{
+		$ci =& get_instance();
+		$_appNo = null;
+		
+		
+		$ci->db->where( 'year', date('Y') );
+		$_curr = $ci->db->get( 'running_no' );
+		
+		if( count( $_curr->result() ) > 0 )
+		{
+			foreach( $_curr->result() as $row )
+			{
+				$_new = $row->no + 1;
+				
+				$_upd = array(
+										'no' => $_new
+									);
+				
+				$ci->db->where( 'runid', $row->runid );
+				$ci->db->update( 'running_no', $_upd );
+				
+				if( strlen( $_new ) == 1 )
+				{
+					$_runNo = '00000'.$_new;
+				}
+				elseif( strlen( $_new ) == 2 )
+				{
+					$_runNo = '0000'.$_new;
+				}
+				elseif( strlen( $_new ) == 3 )
+				{
+					$_runNo = '000'.$_new;
+				}
+				elseif( strlen( $_new ) == 4 )
+				{
+					$_runNo = '00'.$_new;
+				}
+				elseif( strlen( $_new ) == 5 )
+				{
+					$_runNo == '0'.$_new;
+				}
+				
+				$_appNo = 'LX-A-'.date('Y').'-'.$_runNo;
+			}
+		}
+		else
+		{
+			$_run = array(
+								'year' => date('Y'),
+								'no' => 1	
+								);
+								
+			$ci->db->insert( 'running_no', $_run );
+			
+			$_runNo = '000001';
+			$_appNo = 'LX-A-'.date('Y').'-'.$_runNo;
+		}
+		
+		return $_appNo;
+	}
+}
+
+if( ! function_exists('get_address_users') )
+{
+	function get_address_users($profileid)
+	{
+		$ci =& get_instance();
+		
+		$ci->db->where('profile_id', $profileid);
+		$data = $ci->db->get('address');
+		
+		return $data->result();
+	}
+}
+
+if( ! function_exists('get_users_by_userid') )
+{
+	function get_users_by_userid($userid)
+	{
+		$ci =& get_instance();
+		
+		$ci->db->select('*')
+					 ->from('profile')
+					 ->join('address', 'profile.profile_id = address.profile_id')
+					 ->where('profile.uid', $userid);
+					 
+		$data = $ci->db->get();
+		
+		return $data->result();
+		
+	}
+}
+
+if( ! function_exists('get_email_users') )
+{
+	function get_email_users($userid)
+	{
+		$ci =& get_instance();
+		
+		$ci->db->select('email');
+		$ci->db->where('uid', $userid);
+		
+		$data = $ci->db->get('users');
+		$row = $data->result();
+		
+		return $row[0]->email;
+	}
+}
+
+if( ! function_exists('get_parlimen_name') )
+{
+	function get_parlimen_name($par_id)
+	{
+		$ci =& get_instance();
+		
+		$ci->db->where('par_id', $par_id);
+		$data = $ci->db->get('parlimen');
+		$row = $data->result();
+		
+		return $row[0]->par_name;
+	}
+}
+
+if( ! function_exists('get_dashboard_already_license') )
+{
+	function get_dashboard_already_license($addr_id)
+	{
+		$ci =& get_instance();
+		
+		$ci->db->select('*')
+						 ->from('profile')
+						 ->join('address', 'profile.profile_id = address.profile_id')
+						 ->join('application', 'address.addr_id = application.addr_id')
+						 ->where_in('application.status', array('Lulus'))
+						 ->where(array('address.addr_id' => $addr_id));
+				
+		$dash_already = $ci->db->get();
+				
+		return $dash_already->result();
+	}
+}
+
+if( ! function_exists('get_total_dog') )
+{
+	function get_total_dog($app_id)
+	{
+		$ci =& get_instance();
+		
+		$ci->db->where(array('app_id' => $app_id, 'status' => 'Valid'));
+		$data = $ci->db->get('dog_details');
+		
+		return $data->result();
+	}
+}
+
+if( ! function_exists('get_dog_detail') )
+{
+	function get_dog_detail($app_id)
+	{
+		$ci =& get_instance();
+		
+		$ci->db->where(array('app_id' => $app_id));
+		$data = $ci->db->get('dog_details');
+		
+		return $data->result();
+	}
+}
+
+if( ! function_exists('get_dog_license') )
+{
+	function get_dog_license($dog_id)
+	{
+		$ci =& get_instance();
+		
+		$ci->db->where('dog_id', $dog_id);
+		$data = $ci->db->get('license');
+		
+		return $data->result();
+	}
+}
+
+if( ! function_exists('authorize_address') )
+{
+	function authorize_address($addr_id)
+	{
+		$ci =& get_instance();
+		
+		$ci->db->where('addr_id', $addr_id);
+		$ci->db->from('application');
+		
+		return $ci->db->count_all_results();
+		
+	}
+}
+
+if( ! function_exists('get_license_quota') )
+{
+	function get_license_quota($hsid)
+	{
+		$ci =& get_instance();
+		
+		$ci->db->select('quota');
+		$ci->db->where('hsid', $hsid);
+		
+		$data = $ci->db->get('house_space');
+		$row = $data->result();
+		
+		return $row[0]->quota;
+	}
+}
+
+if( ! function_exists('get_available_license') )
+{
+	function get_available_license($addr_id)
+	{
+		$ci =& get_instance();
+		
+		$ci->db->select('COUNT(dog_details.dog_id) AS totalLicense')
+					 ->from('application')
+					 ->join('dog_details', 'application.app_id = dog_details.app_id')
+					 //->join('license', 'dog_details.dog_id = license.dog_id')
+					 ->where('application.addr_id', $addr_id)
+					 ->where('dog_details.status', 'Valid');
+					 
+		$data = $ci->db->get();
+		return $data->result();
+	}
+}
+
+if( ! function_exists('get_dog_type') )
+{
+	function get_dog_type()
+	{
+		$ci =& get_instance();
+		
+		$ci->db->order_by('detail');
+		$data = $ci->db->get('dog_list');
+		return $data->result();
+	}
+}
+
+if( ! function_exists('get_dog_weight') )
+{
+	function get_dog_weight()
+	{
+		$ci =& get_instance();
+		
+		$ci->db->order_by('dwid');
+		$data = $ci->db->get('dog_weight');
+		return $data->result();
+	}
+}
+
+if( ! function_exists('get_temp_dog') )
+{
+	function get_temp_dog($addrID, $dogID)
+	{
+		$ci =& get_instance();
+		
+		$ci->db->where(array('addr_id' => $addrID, 'userid' => $ci->session->userdata('userid'), 'no_dog' => $dogID));
+		$data = $ci->db->get('temporary_dog');
+		
+		return $data->result();
+	}
+}
+
+if( ! function_exists('get_dog_name') )
+{
+	function get_dog_name($type_id)
+	{
+		$ci =& get_instance();
+		
+		$ci->db->where('ddid', $type_id);
+		$data = $ci->db->get('dog_list');
+		$row = $data->result();
+		
+		return $row[0]->detail;
+	}
+}
+
+if( ! function_exists('get_dogs_weight') )
+{
+	function get_dogs_weight($weight_id)
+	{
+		$ci =& get_instance();
+		
+		$ci->db->where('dwid', $weight_id);
+		$data = $ci->db->get('dog_weight');
+		$row = $data->result();
+		
+		return $row[0]->dog_weight;
+	}
+}
+
+if( ! function_exists('validate_doc_support') )
+{
+	function validate_doc_support($home_type)
+	{
+		$ci =& get_instance();
+		
+		$ci->db->where('hid', $home_type);
+		$data = $ci->db->get('house_type');
+		$row = $data->result();
+		
+		return $row[0]->doc;
+	}
+}

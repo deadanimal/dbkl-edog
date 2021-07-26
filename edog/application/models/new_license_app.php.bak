@@ -1,0 +1,9 @@
+<?php
+
+class New_License_App extends CI_Controller
+{
+		public function __construct()
+		{
+				parent::__construct();
+		}
+}

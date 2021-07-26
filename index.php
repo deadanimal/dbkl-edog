@@ -1,0 +1,1 @@
+<?php header("Location: https://edog.dbkl.gov.my/edog2017"); ?>

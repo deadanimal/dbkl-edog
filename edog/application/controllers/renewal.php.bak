@@ -1,0 +1,25 @@
+<?php
+
+class Renewal extends CI_Controller
+{
+		public function __construct()
+		{
+				parent::__construct();
+				$this->load->model('renewal_model');
+		}
+		
+		public function index()
+		{
+				if( $this->session->userdata('isLoggedIn') )
+				{
+						$data['reason'] = $this->renewal_model->get_reasons();
+						$this->template->write_view('content', 'renewal', $data, TRUE);
+						$this->template->parse_template = TRUE;
+						$this->template->render();
+				}
+				else
+				{
+						redirect('login');
+				}
+		}
+}

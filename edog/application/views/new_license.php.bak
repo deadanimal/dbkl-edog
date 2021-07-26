@@ -1,0 +1,362 @@
+ <!-- Page Title -->
+			<section class="site-heading site-section-top">
+				<div class="header-section dashboard">
+					<div class="container">
+						<h1>Permohonan Lesen Baru</h1>
+					</div>
+				</div>
+			</section>
+			<!-- END Page Title -->
+
+            <!-- Company Info -->
+            <section class="site-section site-content-single">
+                <div class="container">
+                    <div class="row">
+						<div class="col-sm-12">
+							<div class="table-responsive">
+								<h3>Butiran Alamat Tempat Peliharaan</h3>
+							<br>
+								<table class="table table-bordered table-striped">
+									<thead>
+										<tr class="warning">
+											<td style="width: 30px;"><strong>Bil</strong></td>
+											<td><strong>Alamat</strong></td>
+											<td class="text-center"><strong>Bilangan Lesen Dibenarkan</strong></td>
+											<td class="text-center"><strong>Baki Lesen</strong></td>
+											<td class="text-center"><strong>Tindakan</strong></td>
+										</tr>
+									</thead>
+									<tbody>
+									<?php 
+									$no=1;
+											foreach ($ADDRESS as $address):
+ 												$totalLicense = get_available_license($address->addr_id);
+ 												$totalAvailable = get_license_quota($address->home_space) - $totalLicense[0]->totalLicense;
+ 												
+ 												echo "<tr>
+																<td class=\"text-center\">".$no."</td>
+																<td>".$address->no_unit.",&nbsp".$address->home_name.",&nbsp".$address->street_name.",&nbsp".$address->town_name.",&nbsp;".$address->postcode." ".get_parlimen_name($address->parlimen).". </td>
+																<td class=\"text-center\">".get_license_quota($address->home_space)."</td>
+																<td class=\"text-center\">".$totalAvailable."</td>";
+														if( $totalAvailable > 0 )		
+															echo "<td><a href=\"".base_url()."index.php/new_license_app/index/".$address->addr_id."\" class=\"btn btn-square btn-sm btn-success\">Tambah Lesen Baru</a></td>";
+														elseif( $totalAvailable == 0 )
+															echo "<td class=\"text-center\">N/A</td>";															
+												echo "</tr>";
+											$no++;
+											endforeach; 
+										?>
+									</tbody>
+								</table>
+							</div>
+						</div>
+                    </div>
+                </div>
+            </section>
+            <!-- END Company Info -->
+			
+					<!-- Modal Register License #1 -->
+        <div id="update-renew-1" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+					<div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Butiran Anjing Peliharaan<strong> #1</strong></h4>
+                    </div>
+					<div class="modal-body">
+						<form id="form-not-renew" action="manage_profile.html" method="post" class="form-horizontal">
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="val_dogtype">Jenis / Baka <span class="text-danger">*</span></label>
+								<div class="col-md-6">
+									<select id="example-select" name="example-select" class="form-control wizard-ignore" size="1">
+										<option value="0">Please select</option>
+										<option value="1">Biasa</option>
+										<option value="2">Minature Pinscher</option>
+										<option value="3">Bichon Frise</option>
+										<option value="4">Pekingese</option>
+										<option value="5">Papillon</option>
+										<option value="6">Poodle (Toy)</option>
+										<option value="7">Japanese Chin</option>
+										<option value="8">Maltese</option>
+										<option value="9">Pomeranian</option>
+										<option value="10">Chihuahua</option>
+										<option value="11">Pit Bull</option>
+										<option value="12">American Bulldog</option>
+										<option value="13">Neapolitan Mastiff</option>
+										<option value="14">Japanese Tosa</option>
+										<option value="15">Akita</option>
+										<option value="16">Dogo Argentino</option>
+										<option value="17">Fila Braziliero</option>
+										<option value="18">Rottweiller</option>
+										<option value="19">Doberman</option>
+										<option value="20">German Shepard</option>
+										<option value="21">Bull Mastiff</option>
+										<option value="22">Bull Terrier</option>
+										<option value="23">Perrode Presa Canario</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="val_dogcolor">Warna <span class="text-danger">*</span></label>
+								
+								<div class="col-md-6">
+									<div class="checkbox">
+										<label for="val_dogcolor_blk">
+											<input type="checkbox" id="val_dogcolor_blk" name="val_dogcolor_blk" value="option1" class="wizard-ignore"  > Hitam
+										</label>
+									</div>
+									<div class="checkbox">
+										<label for="val_dogcolor_wht">
+											<input type="checkbox" id="val_dogcolor_wht" name="val_dogcolor_wht" value="option2" class="wizard-ignore"  > Putih
+										</label>
+									</div>
+									<div class="checkbox">
+										<label for="val_dogcolor_brown">
+											<input type="checkbox" id="val_dogcolor_brown" name="val_dogcolor_brown" value="option3" class="wizard-ignore" > Coklat
+										</label>
+									</div>
+									<div class="checkbox">
+										<label for="val_dogcolor_etc">
+											<input type="checkbox" id="val_dogcolor_etc" name="val_dogcolor_etc" value="option1" class="wizard-ignore" > Lain-lain
+										</label>
+									</div>
+									<input type="text" id="val_dogcolor_etc" name="val_dogcolor_etc" class="form-control wizard-ignore" placeholder="Sila nyatakan warna anjing, jika lain-lain.." >
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label">Jantina</label>
+								<div class="col-md-6">
+									<label class="radio-inline" for="example-inline-radio3">
+										<input type="radio" id="example-inline-radio3" name="example-inline-radios3" value="option1" class="wizard-ignore" > Jantan
+									</label>
+									<label class="radio-inline" for="example-inline-radio4">
+										<input type="radio" id="example-inline-radio4" name="example-inline-radios4" value="option2" class="wizard-ignore" > Betina
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="example-select">Berat</label>
+								<div class="col-md-6">
+									<select id="example-select" name="example-select" class="form-control wizard-ignore" size="1">
+										<option value="0">Please select</option>
+										<option value="1" >Kurang dari 10kg (22 pound)</option>
+										<option value="2">Lebih dari 10kg (22 pound)</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label">Pemandulan</label>
+								<div class="col-md-6">
+									<label class="radio-inline" for="example-inline-radio5">
+										<input type="radio" id="example-inline-radio5" name="example-inline-radios5" value="option1" class="wizard-ignore" > Ya
+									</label>
+									<label class="radio-inline" for="example-inline-radio6">
+										<input type="radio" id="example-inline-radio6" name="example-inline-radios6" value="option2" class="wizard-ignore"  > Tidak
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label">Mikrocip</label>
+								<div class="col-md-6">
+									<input type="text" id="val_username" name="val_username" class="form-control wizard-ignore" placeholder="SIRI-9999-99" >
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-7 control-label col-md-offset-1">Pemilik telah menghadiri latihan atau kursus pemeliharaan haiwan.</label>
+								<div class="col-md-3">
+									<label class="radio-inline" for="example-inline-radio7">
+										<input type="radio" id="example-inline-radio7" name="example-inline-radios7" value="option1" class="wizard-ignore" > Ya
+									</label>
+									<label class="radio-inline" for="example-inline-radio8">
+										<input type="radio" id="example-inline-radio8" name="example-inline-radios8" value="option2" class="wizard-ignore" > Tidak
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-7 control-label col-md-offset-1">Anjing telah menjalani latihan "good behaviour and obedience".</label>
+								<div class="col-md-3">
+									<label class="radio-inline" for="example-inline-radio9">
+										<input type="radio" id="example-inline-radio9" name="example-inline-radios9" value="option1" class="wizard-ignore" > Ya
+									</label>
+									<label class="radio-inline" for="example-inline-radio10">
+										<input type="radio" id="example-inline-radio10" name="example-inline-radios10" value="option2" class="wizard-ignore" > Tidak
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="example-file-input">Gambar Anjing</label>
+								<div class="col-md-7">
+									<input type="file" id="example-file-input" name="example-file-input">
+								</div>
+							</div>
+							<!-- Form Buttons -->
+							<div class="form-group form-actions">
+								<div class="col-md-8 col-md-offset-4">
+									<button type="reset" class="btn btn-square btn-sm btn-warning" id="add-dog" value="Padam"><i class="fa fa-repeat"></i> Padam</button>
+									<button type="submit" class="btn btn-square btn-sm btn-primary" id="add-dog" value="Simpan"><i class="fa fa-save"></i> Simpan</button>
+								</div>
+							</div>
+							<!-- END Form Buttons -->
+						</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END Modal Register License #1-->
+		
+				<!-- Modal Update Details -->
+        <div id="update-renew-2" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+					<div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Butiran Anjing Peliharaan<strong> #2</strong></h4>
+                    </div>
+					<div class="modal-body">
+						<form id="form-not-renew" action="manage_profile.html" method="post" class="form-horizontal">
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="val_dogtype">Jenis / Baka <span class="text-danger">*</span></label>
+								<div class="col-md-6">
+									<select id="example-select" name="example-select" class="form-control wizard-ignore" size="1" disabled>
+										<option value="0">Please select</option>
+										<option value="1" selected>Biasa</option>
+										<option value="2">Minature Pinscher</option>
+										<option value="3">Bichon Frise</option>
+										<option value="4">Pekingese</option>
+										<option value="5">Papillon</option>
+										<option value="6">Poodle (Toy)</option>
+										<option value="7">Japanese Chin</option>
+										<option value="8">Maltese</option>
+										<option value="9">Pomeranian</option>
+										<option value="10">Chihuahua</option>
+										<option value="11">Pit Bull</option>
+										<option value="12">American Bulldog</option>
+										<option value="13">Neapolitan Mastiff</option>
+										<option value="14">Japanese Tosa</option>
+										<option value="15">Akita</option>
+										<option value="16">Dogo Argentino</option>
+										<option value="17">Fila Braziliero</option>
+										<option value="18">Rottweiller</option>
+										<option value="19">Doberman</option>
+										<option value="20">German Shepard</option>
+										<option value="21">Bull Mastiff</option>
+										<option value="22">Bull Terrier</option>
+										<option value="23">Perrode Presa Canario</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="val_dogcolor">Warna <span class="text-danger">*</span></label>
+								
+								<div class="col-md-6">
+									<div class="checkbox">
+										<label for="val_dogcolor_blk">
+											<input type="checkbox" id="val_dogcolor_blk" name="val_dogcolor_blk" value="option1" class="wizard-ignore" checked disabled> Hitam
+										</label>
+									</div>
+									<div class="checkbox">
+										<label for="val_dogcolor_wht">
+											<input type="checkbox" id="val_dogcolor_wht" name="val_dogcolor_wht" value="option2" class="wizard-ignore" checked disabled> Putih
+										</label>
+									</div>
+									<div class="checkbox">
+										<label for="val_dogcolor_brown">
+											<input type="checkbox" id="val_dogcolor_brown" name="val_dogcolor_brown" value="option3" class="wizard-ignore" disabled> Coklat
+										</label>
+									</div>
+									<div class="checkbox">
+										<label for="val_dogcolor_etc">
+											<input type="checkbox" id="val_dogcolor_etc" name="val_dogcolor_etc" value="option1" class="wizard-ignore" disabled> Lain-lain
+										</label>
+									</div>
+									<input type="text" id="val_dogcolor_etc" name="val_dogcolor_etc" class="form-control wizard-ignore" placeholder="Sila nyatakan warna anjing, jika lain-lain.." disabled>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label">Jantina</label>
+								<div class="col-md-6">
+									<label class="radio-inline" for="example-inline-radio3">
+										<input type="radio" id="example-inline-radio3" name="example-inline-radios3" value="option1" class="wizard-ignore" checked> Jantan
+									</label>
+									<label class="radio-inline" for="example-inline-radio4">
+										<input type="radio" id="example-inline-radio4" name="example-inline-radios4" value="option2" class="wizard-ignore" disabled> Betina
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="example-select">Berat</label>
+								<div class="col-md-6">
+									<select id="example-select" name="example-select" class="form-control wizard-ignore" size="1">
+										<option value="0">Please select</option>
+										<option value="1" selected>Kurang dari 10kg (22 pound)</option>
+										<option value="2">Lebih dari 10kg (22 pound)</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label">Pemandulan</label>
+								<div class="col-md-6">
+									<label class="radio-inline" for="example-inline-radio5">
+										<input type="radio" id="example-inline-radio5" name="example-inline-radios5" value="option1" class="wizard-ignore" checked> Ya
+									</label>
+									<label class="radio-inline" for="example-inline-radio6">
+										<input type="radio" id="example-inline-radio6" name="example-inline-radios6" value="option2" class="wizard-ignore" disabled > Tidak
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label">Mikrocip</label>
+								<div class="col-md-6">
+									<input type="text" id="val_username" name="val_username" class="form-control wizard-ignore" placeholder="SIRI-9999-99" disabled>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-7 control-label col-md-offset-1">Pemilik telah menghadiri latihan atau kursus pemeliharaan haiwan.</label>
+								<div class="col-md-3">
+									<label class="radio-inline" for="example-inline-radio7">
+										<input type="radio" id="example-inline-radio7" name="example-inline-radios7" value="option1" class="wizard-ignore" checked> Ya
+									</label>
+									<label class="radio-inline" for="example-inline-radio8">
+										<input type="radio" id="example-inline-radio8" name="example-inline-radios8" value="option2" class="wizard-ignore" disabled> Tidak
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-7 control-label col-md-offset-1">Anjing telah menjalani latihan "good behaviour and obedience".</label>
+								<div class="col-md-3">
+									<label class="radio-inline" for="example-inline-radio9">
+										<input type="radio" id="example-inline-radio9" name="example-inline-radios9" value="option1" class="wizard-ignore" checked> Ya
+									</label>
+									<label class="radio-inline" for="example-inline-radio10">
+										<input type="radio" id="example-inline-radio10" name="example-inline-radios10" value="option2" class="wizard-ignore" disabled> Tidak
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="example-file-input">Gambar Anjing</label>
+								<div class="col-md-7">
+									<input type="file" id="example-file-input" name="example-file-input">
+								</div>
+							</div>
+							<!-- Form Buttons -->
+							<div class="form-group form-actions">
+								<div class="col-md-8 col-md-offset-4">
+									<button type="reset" class="btn btn-square btn-sm btn-warning" id="add-dog" value="Padam"><i class="fa fa-repeat"></i> Padam</button>
+									<button type="submit" class="btn btn-square btn-sm btn-primary" id="add-dog" value="Simpan"><i class="fa fa-save"></i> Simpan</button>
+								</div>
+							</div>
+							<!-- END Form Buttons -->
+						</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END Modal Update Details #2-->
+        
+
+        <!-- Scroll to top link, initialized in js/app.js - scrollToTop() -->
+        <a href="#" id="to-top"><i class="fa fa-angle-up"></i></a>
+			
+	<!-- Load and execute javascript code used only in this page -->
+    <script src="<?php echo base_url();?>js/pages/formsWizard.js"></script>
+    <script>$(function(){ FormsWizard.init(); });</script>

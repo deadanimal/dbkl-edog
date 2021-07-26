@@ -1,0 +1,58 @@
+<?php
+
+class Menu
+{
+		public function user_menu()
+		{
+				 $ci =& get_instance();
+				 $menu = null;
+				 $menu .= "<!-- Main Menu -->
+						          <ul class=\"site-nav\">
+						              <!-- Toggles menu on small screens -->
+						              <li class=\"visible-xs visible-sm\">
+						                  <a href=\"javascript:void(0)\" class=\"site-menu-toggle text-center\">
+						                      <i class=\"fa fa-times\"></i>
+						                  </a>
+						              </li>
+						              <!-- END Menu Toggle -->";
+						              
+						              	if( $ci->session->userdata('roles') == 1 )
+						              	{
+						              			$dashboard = null;
+						              			$profile = null;
+						              			$new = null;
+						              			$renew = null;
+						              			
+						              			if($ci->uri->segment(1) == 'dashboard_user')
+						              			{
+						              				$dashboard = 'active';
+						              			}
+						           
+						              $menu .= "<li class='".$dashboard."'>
+									                      <a href='".base_url()."index.php/dashboard_user'>Dashboard Pengguna</a>
+									                  </li>
+																		<li>
+											                  <a href='#' class=\"site-nav-sub\"><i class=\"fa fa-angle-down site-nav-arrow\"></i>Pengurusan Lesen</a>
+																						<ul>
+																							<li>
+																								<a href='".base_url()."index.php/already_license'>Senarai Lesen Sedia Ada</a>
+																							</li>
+																							<li>
+																								<a href='".base_url()."index.php/new_license'>Permohonan Lesen Baru</a>
+																							</li>
+																							<li>
+																								<a href='".base_url()."index.php/renew'>Pembaharuan Lesen</a>
+																							</li>
+																						</ul>
+											              </li>
+																		<li>
+				                                <a href=\"dashboard_user.html\">Soalan Lazim</a>
+				                            </li>";
+						            		}
+						           
+						          	$menu .= "</ul>
+						          							<!-- END Main Menu -->";
+						          							
+						  return $menu;
+		}
+}

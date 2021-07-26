@@ -1,0 +1,248 @@
+[07-Nov-2014 00:35:44 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[07-Nov-2014 00:35:47 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[07-Nov-2014 00:45:06 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[07-Nov-2014 00:48:35 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[07-Nov-2014 00:48:35 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[07-Nov-2014 00:54:07 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[07-Nov-2014 00:55:05 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 11:45:25 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 11:45:45 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 11:46:15 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:02:47 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:03:42 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:08:05 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:09:52 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:11:09 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:19:53 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:20:13 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:23:32 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:23:39 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:24:48 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:25:52 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:25:59 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:26:28 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:26:43 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:27:10 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:40:48 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ';' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 197
+[12-Nov-2014 12:40:52 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ';' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 197
+[12-Nov-2014 12:41:51 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ';' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 197
+[12-Nov-2014 12:42:18 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ';' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 197
+[12-Nov-2014 12:42:45 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ';' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 197
+[12-Nov-2014 12:42:55 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ';' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 197
+[12-Nov-2014 12:45:11 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 186
+[12-Nov-2014 12:46:17 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 186
+[12-Nov-2014 12:47:13 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 186
+[12-Nov-2014 12:48:01 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected $end in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 188
+[12-Nov-2014 12:48:14 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 186
+[12-Nov-2014 12:49:11 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ';' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 197
+[12-Nov-2014 12:50:47 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ';' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 197
+[12-Nov-2014 12:50:49 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ';' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 197
+[12-Nov-2014 12:51:09 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:51:48 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:52:28 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:53:27 Asia/Kuala_Lumpur] PHP Fatal error:  Class 'PHPMailer' not found in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 185
+[12-Nov-2014 12:54:04 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '}' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 208
+[12-Nov-2014 12:54:25 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '}' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 208
+[12-Nov-2014 12:54:27 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '}' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 208
+[12-Nov-2014 12:54:55 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '}' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 208
+[12-Nov-2014 12:54:57 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '}' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 208
+[12-Nov-2014 12:55:10 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '}' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 208
+[12-Nov-2014 12:55:11 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '}' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 208
+[12-Nov-2014 12:55:19 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '}' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 209
+[12-Nov-2014 12:55:24 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '}' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 209
+[12-Nov-2014 12:56:57 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '}' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 210
+[12-Nov-2014 12:57:42 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '}' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 211
+[12-Nov-2014 12:57:57 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '}' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 212
+[12-Nov-2014 12:59:24 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '}' in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 212
+[12-Nov-2014 16:39:53 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_ENCAPSED_AND_WHITESPACE, expecting ')' in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 42
+[12-Nov-2014 16:40:15 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_ENCAPSED_AND_WHITESPACE, expecting ')' in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 42
+[12-Nov-2014 17:07:52 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function get_temp_renew_dog() in /home/lavakode/public_html/edog/application/views/renewal.php on line 51
+[12-Nov-2014 17:08:37 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function get_temp_renew_dog() in /home/lavakode/public_html/edog/application/views/renewal.php on line 51
+[12-Nov-2014 17:08:52 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function get_temp_renew_dog() in /home/lavakode/public_html/edog/application/views/renewal.php on line 51
+[12-Nov-2014 17:12:17 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:14:27 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:14:42 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:16:09 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:16:45 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:16:49 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:17:00 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:18:26 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:19:17 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:20:27 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:20:56 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:26:50 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:28:20 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:28:40 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:28:45 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:30:49 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:31:17 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:34:13 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:34:17 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:36:54 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:39:20 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:41:39 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:44:27 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:44:35 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:45:52 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:45:59 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:50:07 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[12-Nov-2014 17:50:32 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[13-Nov-2014 10:05:08 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[13-Nov-2014 10:05:40 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method CI_Input::insert() in /home/lavakode/public_html/edog/application/models/renewal_model.php on line 54
+[14-Nov-2014 15:52:07 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 15:53:57 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 15:56:57 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 15:57:07 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 15:57:13 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 15:58:28 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 15:58:50 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 15:59:51 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:00:56 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:01:01 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:01:03 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:01:19 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:01:22 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:01:24 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:01:29 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:01:44 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:01:47 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:02:05 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:02:07 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:02:21 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:02:40 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:02:54 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:03:26 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:03:51 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:03:59 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:04:24 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:04:29 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:04:59 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:05:28 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:05:40 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:06:09 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:06:23 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:06:26 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:06:55 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:06:57 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:06:58 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:07:00 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:07:38 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:07:40 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:07:53 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:08:16 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:08:22 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:09:13 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:09:27 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:09:29 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:09:52 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:09:54 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:11:54 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:12:12 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:12:22 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:12:42 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:13:12 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:13:32 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:13:48 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:14:46 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:15:02 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:15:36 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:15:58 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:17:12 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[14-Nov-2014 16:17:58 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 359
+[16-Nov-2014 01:05:13 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 377
+[16-Nov-2014 01:05:17 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 377
+[16-Nov-2014 01:05:48 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 377
+[16-Nov-2014 01:05:50 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 377
+[16-Nov-2014 01:06:26 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 377
+[16-Nov-2014 01:06:42 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function YEAR() in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 378
+[16-Nov-2014 01:07:28 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 380
+[16-Nov-2014 01:09:39 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function last_query() on a non-object in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 382
+[16-Nov-2014 23:14:41 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 406
+[16-Nov-2014 23:15:11 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 406
+[17-Nov-2014 14:56:29 Asia/Kuala_Lumpur] PHP Warning:  require(application/config/constants.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:29 Asia/Kuala_Lumpur] PHP Warning:  require(application/config/constants.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:29 Asia/Kuala_Lumpur] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'application/config/constants.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:33 Asia/Kuala_Lumpur] PHP Warning:  require(application/config/constants.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:33 Asia/Kuala_Lumpur] PHP Warning:  require(application/config/constants.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:33 Asia/Kuala_Lumpur] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'application/config/constants.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:37 Asia/Kuala_Lumpur] PHP Warning:  require(application/config/constants.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:37 Asia/Kuala_Lumpur] PHP Warning:  require(application/config/constants.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:37 Asia/Kuala_Lumpur] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'application/config/constants.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:38 Asia/Kuala_Lumpur] PHP Warning:  require(application/config/constants.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:38 Asia/Kuala_Lumpur] PHP Warning:  require(application/config/constants.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:38 Asia/Kuala_Lumpur] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'application/config/constants.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:43 Asia/Kuala_Lumpur] PHP Warning:  require(application/config/constants.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:43 Asia/Kuala_Lumpur] PHP Warning:  require(application/config/constants.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:43 Asia/Kuala_Lumpur] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'application/config/constants.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:46 Asia/Kuala_Lumpur] PHP Warning:  require(application/config/constants.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:46 Asia/Kuala_Lumpur] PHP Warning:  require(application/config/constants.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:46 Asia/Kuala_Lumpur] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'application/config/constants.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:48 Asia/Kuala_Lumpur] PHP Warning:  require(application/config/constants.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:48 Asia/Kuala_Lumpur] PHP Warning:  require(application/config/constants.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:48 Asia/Kuala_Lumpur] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'application/config/constants.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:53 Asia/Kuala_Lumpur] PHP Warning:  require(application/config/constants.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:53 Asia/Kuala_Lumpur] PHP Warning:  require(application/config/constants.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:53 Asia/Kuala_Lumpur] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'application/config/constants.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:56 Asia/Kuala_Lumpur] PHP Warning:  require(application/config/constants.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:56 Asia/Kuala_Lumpur] PHP Warning:  require(application/config/constants.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[17-Nov-2014 14:56:56 Asia/Kuala_Lumpur] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'application/config/constants.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/lavakode/public_html/edog/system/core/CodeIgniter.php on line 64
+[20-Nov-2014 12:22:48 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 427
+[20-Nov-2014 12:23:01 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 427
+[20-Nov-2014 12:26:06 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 427
+[20-Nov-2014 12:28:27 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 427
+[20-Nov-2014 13:13:26 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 427
+[20-Nov-2014 13:13:49 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 427
+[20-Nov-2014 13:13:55 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 427
+[20-Nov-2014 14:12:07 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 427
+[20-Nov-2014 14:12:08 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 427
+[20-Nov-2014 14:12:34 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 427
+[20-Nov-2014 14:12:41 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 427
+[20-Nov-2014 14:20:26 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 427
+[20-Nov-2014 14:20:32 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 427
+[20-Nov-2014 14:36:37 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 427
+[20-Nov-2014 15:25:41 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 427
+[24-Nov-2014 10:42:47 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_OBJECT_OPERATOR in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 280
+[24-Nov-2014 10:43:15 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_OBJECT_OPERATOR in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 280
+[24-Nov-2014 12:47:24 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 475
+[24-Nov-2014 12:48:05 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 475
+[24-Nov-2014 12:50:42 Asia/Kuala_Lumpur] PHP Fatal error:  Cannot use object of type stdClass as array in /home/lavakode/public_html/edog/application/views/appeal.php on line 123
+[24-Nov-2014 12:50:58 Asia/Kuala_Lumpur] PHP Fatal error:  Cannot use object of type stdClass as array in /home/lavakode/public_html/edog/application/views/appeal.php on line 123
+[24-Nov-2014 12:51:28 Asia/Kuala_Lumpur] PHP Fatal error:  Cannot use object of type stdClass as array in /home/lavakode/public_html/edog/application/views/appeal.php on line 124
+[25-Nov-2014 10:37:07 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function assign_rand_value() in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 432
+[25-Nov-2014 10:40:23 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function assign_rand_value() in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 432
+[25-Nov-2014 10:42:12 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function assign_rand_value() in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 432
+[25-Nov-2014 10:43:25 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function assign_rand_value() in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 432
+[25-Nov-2014 10:45:04 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function assign_rand_value() in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 432
+[25-Nov-2014 10:49:26 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function assign_rand_value() in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 432
+[25-Nov-2014 10:50:59 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function assign_rand_value() in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 432
+[25-Nov-2014 10:52:06 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function assign_rand_value() in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 432
+[25-Nov-2014 10:53:35 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 432
+[25-Nov-2014 10:53:50 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method Login::assign_rand_value() in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 434
+[25-Nov-2014 11:13:38 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function sha1() on a non-object in /home/lavakode/public_html/edog/application/models/manage_profile_model.php on line 58
+[25-Nov-2014 11:22:31 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_EXIT, expecting ',' or ';' in /home/lavakode/public_html/edog/application/models/manage_profile_model.php on line 26
+[25-Nov-2014 11:22:41 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function sha1() on a non-object in /home/lavakode/public_html/edog/application/models/manage_profile_model.php on line 25
+[25-Nov-2014 15:09:27 Asia/Kuala_Lumpur] PHP Fatal error:  Can't use method return value in write context in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 33
+[25-Nov-2014 15:09:56 Asia/Kuala_Lumpur] PHP Fatal error:  Can't use method return value in write context in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 33
+[25-Nov-2014 15:43:20 Asia/Kuala_Lumpur] PHP Fatal error:  Can't use method return value in write context in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 34
+[25-Nov-2014 15:58:36 Asia/Kuala_Lumpur] PHP Fatal error:  Can't use method return value in write context in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 33
+[25-Nov-2014 16:16:20 Asia/Kuala_Lumpur] PHP Fatal error:  Can't use method return value in write context in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 35
+[25-Nov-2014 16:16:28 Asia/Kuala_Lumpur] PHP Fatal error:  Can't use method return value in write context in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 35
+[25-Nov-2014 16:18:08 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_IF in /home/lavakode/public_html/edog/application/controllers/new_license_app.php on line 38
+[27-Nov-2014 15:50:41 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function get_users_name() in /home/lavakode/public_html/edog/application/controllers/dashboard_user.php on line 16
+[28-Nov-2014 17:05:37 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ';' in /home/lavakode/public_html/edog/application/views/application_view.php on line 84
+[28-Nov-2014 17:12:58 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '<' in /home/lavakode/public_html/edog/application/views/application_view.php on line 100
+[01-Dec-2014 11:07:43 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/application/helpers/common_helper.php on line 520
+[01-Dec-2014 11:18:30 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ';' in /home/lavakode/public_html/edog/application/views/dashboard_user.php on line 19
+[02-Dec-2014 11:36:45 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/views/dashboard_user.php on line 21
+[02-Dec-2014 11:36:46 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/views/dashboard_user.php on line 21
+[02-Dec-2014 11:36:48 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/views/dashboard_user.php on line 21
+[02-Dec-2014 11:37:01 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/views/dashboard_user.php on line 21
+[02-Dec-2014 11:37:47 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/application/views/dashboard_user.php on line 21
+[02-Dec-2014 11:38:35 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '<' in /home/lavakode/public_html/edog/application/views/dashboard_user.php on line 28
+[02-Dec-2014 11:38:43 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '<' in /home/lavakode/public_html/edog/application/views/dashboard_user.php on line 28
+[04-Oct-2017 18:22:10 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '}' in /home/kapasito/public_html/edog2017/application/controllers/main.php on line 14
+[05-Oct-2017 15:08:31 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function YEAR() in /home/kapasito/public_html/edog2017/application/helpers/common_helper.php on line 172
+[09-Oct-2017 17:27:28 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '" . <a href='"' (T_CONSTANT_ENCAPSED_STRING) in /home/kapasito/public_html/edog2017/application/views/application_view.php on line 64
+[12-Oct-2017 10:32:27 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home/kapasito/public_html/edog2017/application/views/appeal.php on line 75
+[17-Oct-2017 10:41:57 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ''application/x-rtf'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /home/kapasito/public_html/edog2017/application/config/mimes.php on line 85
+[17-Oct-2017 11:24:52 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function get_available_license2() in /home/kapasito/public_html/edog2017/application/views/manage_profile.php on line 211

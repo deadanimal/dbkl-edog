@@ -1,0 +1,17 @@
+<?php
+
+class Renewal_Model extends CI_Model
+{
+		public function __construct()
+		{
+			parent::__construct();
+		}
+		
+		public function get_reasons()
+		{
+				$this->db->where_in('category', array('Dog', 'Application|Dog'));
+				$reason = $this->db->get('reason_not_renew');
+				
+				return $reason->result();
+		}
+}

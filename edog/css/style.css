@@ -1,0 +1,75 @@
+
+@media only screen and (max-width: 800px) {
+#unseen table td:nth-child(2),
+#unseen table th:nth-child(2) {display: none;}
+}
+ 
+@media only screen and (max-width: 640px) {
+#unseen table td:nth-child(4),
+#unseen table th:nth-child(4),
+#unseen table td:nth-child(7),
+#unseen table th:nth-child(7),
+#unseen table td:nth-child(8),
+#unseen table th:nth-child(8){display: none;}
+}
+
+/**Login**/
+.table-login {
+	width:300px;
+	font-size:0.9em;
+	position:absolute;
+  z-index:15;
+  top:50%;
+  left:50%;
+  margin:-100px 0 0 -150px;
+}
+
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+a {
+	cursor:pointer;
+}
+
+#register-form{
+	font: .9em "Arial", sans-serif;
+	padding:10px;
+}
+
+.ui-dialog-title, .ui-dialog-buttonpane button{
+    font: 1.0em "Arial", sans-serif; !important;
+}
+
+.multi-language {
+	text-align:right;
+	padding-right:20px;
+	padding-top:10px;
+}
+
+#content {
+	padding:20px;
+	font-size:0.9em; 	
+}
+
+.application-form {
+	width:60%;
+}
+
+

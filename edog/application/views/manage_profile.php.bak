@@ -1,0 +1,399 @@
+<!-- Page Title -->
+			<section class="site-heading site-section-top">
+				<div class="header-section dashboard">
+					<div class="container">
+						<h1>Profil</h1>
+					</div>
+				</div>
+			</section>
+			<!-- END Page Title -->
+						<?php 
+						if( count($PROFILE) > 0)
+						{
+								$tab_disabled = "class=''";
+								$data_toggle = "tabs";
+						}
+						?>
+            <!-- Form Urus Profil -->
+            <section class="site-section site-content-single">
+                <div class="container">
+                    <div class="row">
+						<div class="col-sm-12">
+							<!-- Default Tabs -->
+							<ul class="nav nav-pills nav-justified" >
+								<li class="active" data-toggle="tabs"><a href="#profile"><strong>1. Butiran Pengenalan Diri</strong></a></li>
+								<li <?php echo $tab_disabled; ?> data-toggle="<?php echo $data_toggle; ?>"><a href="#address"><strong>2. Daftar Alamat Tempat Peliharaan</strong></a></li>
+							</ul>
+							<div class="small-gap"></div>
+							<div class="tab-content small-gap">
+								<div class="tab-pane active" id="profile">
+									<!-- User Details -->
+									<form id="user-details" action="<?php echo base_url();?>index.php/manage_profile/save_profile" method="post" class="form-horizontal form-bordered">
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="val_username">Nama Pemohon <span class="text-danger">*</span></label>
+											<div class="col-md-6">
+												<input type="text" disabled id="val_name_view" name="val_name_view" class="form-control" value="<?php echo $this->session->userdata('name');?>" required>
+												<input type="hidden" id="val_name" name="val_name" value="<?php echo $this->session->userdata('name');?>">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="val_resident">Kewarganegaraan <span class="text-danger">*</span></label>
+											<div class="col-md-6">
+												<?php
+												$my = null;
+												$ttp = null;
+												$asg = null;
+												$phone_no = null;
+												
+												if( count($PROFILE) > 0)
+												{
+													$phone_no = $PROFILE[0]->phone_no;
+													if($PROFILE[0]->citizenship == 'Malaysia')
+														$my = 'checked';
+													elseif($PROFILE[0]->citizenship == 'Tetap')
+														$ttp = 'checked';
+													elseif($PROFILE[0]->citizenship == 'Asing')
+														$asg = 'checked';
+												}
+												?>
+												<label class="radio-inline" for="example-inline-radio1">
+													<input type="radio" <?php echo $my; ?> id="val_resident_my1" name="val_resident_my" value="Malaysia"> Malaysia
+												</label>
+												<label class="radio-inline" for="example-inline-radio2">
+													<input type="radio" <?php echo $ttp; ?> id="val_resident_my2" name="val_resident_my" value="Tetap"> Penduduk Tetap
+												</label>
+												<label class="radio-inline" for="example-inline-radio2">
+													<input type="radio" <?php echo $asg; ?> id="val_resident_my2" name="val_resident_my" value="Asing"> Warga Asing
+												</label>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="val_resident">Jenis Pengenalan <span class="text-danger">*</span></label>
+											<div class="col-md-6">
+												<?php 
+												$ic = null;
+												$army = null;
+												$passport = null;
+												
+												if($this->session->userdata('id_type') == 'IC')
+												{
+													$ic = 'checked';
+												}
+												elseif($this->session->userdata('id_type') == 'ARMY')
+												{
+													$army = 'checked';
+												}
+												elseif($this->session->userdata('id_type') == 'PASSPORT')
+												{
+													$passport = 'checked';
+												}
+												?>
+												<input type="hidden" name="val_type_id" value="<?php echo $this->session->userdata('id_type');?>" />
+												<label class="radio-inline" for="example-inline-radio1">
+													<input type="radio" disabled <?php echo $ic;?> id="val_type_id1" name="val_type_ids" value="IC"> Kad Pengenalan
+												</label>
+												<label class="radio-inline" for="example-inline-radio2">
+													<input type="radio" disabled <?php echo $army;?> id="val_type_id2" name="val_type_ids" value="ARMY"> No. Tentera/Polis
+												</label>
+												<label class="radio-inline" for="example-inline-radio2">
+													<input type="radio" disabled <?php echo $passport;?> id="val_type_id2" name="val_type_ids" value="PASSPORT	"> No. Paspot
+												</label>
+											</div>
+											<div class="col-sm-6 col-sm-offset-4">
+												<input type="text" disabled id="val_id_view" name="val_id_view" class="form-control" value="<?php echo $this->session->userdata('nric');?>"/>
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="masked_phone">No. Telefon Bimbit <span class="text-danger">*</span></label>
+											<div class="col-md-6">
+												<input type="text" id="masked_phone" name="masked_phone" class="form-control" placeholder="(999) 999-9999" value="<?php echo $phone_no; ?>">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-4 control-label" for="val_email">Emel <span class="text-danger">*</span></label>
+											<div class="col-md-6">
+												<input type="hidden" name="val_email" value="<?php echo get_email_users($this->session->userdata('userid'));?>" />
+												<input type="text" disabled id="val_email_view" name="val_email_view" class="form-control" value="<?php echo get_email_users($this->session->userdata('userid'));?>">
+											</div>
+										</div>
+										<div class="form-group form-actions">
+											<div class="col-md-8 col-md-offset-4">
+												<button type="reset" class="btn btn-square btn-sm btn-warning" id="add-dog" value="Padam"><i class="fa fa-repeat"></i> Padam</button>
+												<button type="submit" class="btn btn-square btn-sm btn-primary" id="add-dog" value="Simpan"><i class="fa fa-save"></i> Simpan</button>
+											</div>
+										</div>
+									</form>
+								</div>
+								
+								<!-- Address Details -->
+								<div class="tab-pane" id="address">
+									<div class="site-block">
+										<div class="table-responsive">
+											<table class="table table-striped table-vcenter table-bordered">
+												<thead>
+													<tr>
+														<th>Alamat</th>
+														<th class="text-center" width="20%">Tindakan</th>
+													</tr>
+												</thead>
+												<tbody>
+													<?php 
+													
+													if( $PROFILE[0]->profile_id > 0 )
+														$info_address = get_address_users($PROFILE[0]->profile_id);
+													else
+														$info_address = 0;
+													
+													if( count($info_address) > 0)
+													{
+														$no=1;
+														foreach($info_address as $row)
+														{
+															$addr = $row->no_unit.",&nbsp;".ucwords(strtolower($row->home_name)).",&nbsp;".ucwords(strtolower($row->street_name)).",&nbsp;".ucwords(strtolower($row->town_name)).",&nbsp;".ucwords(strtolower(get_parlimen_name($row->parlimen))).",&nbsp".$row->postcode." Kuala Lumpur";
+															
+															
+															echo "<tr>
+																			<td>".$addr."</td>
+																			<td class=\"text-center\">
+																				<div class=\"btn-group btn-group-xs\">
+																					<a href=\"javascript:void(0)\" data-toggle=\"modal\" onclick=\"view_address('".$row->addr_id."')\" title=\"Papar\" class=\"btn btn-info\"><i class=\"fa fa-eye\"></i>  </a>
+																					<a href=\"javascript:void(0)\" data-toggle=\"modal\" onclick=\"edit_address('".$row->addr_id."')\" title=\"Kemaskini\" class=\"btn btn-success\"><i class=\"fa fa-pencil\"></i></a>
+																					<a href=\"javascript:void(0)\" data-toggle=\"modal\" onclick=\"del_address('".$row->addr_id."')\" title=\"Padam\" class=\"btn btn-danger\"><i class=\"fa fa-times\"></i></a>
+																				</div>
+																			</td>
+																		</tr>";
+																		
+															$no++;
+														}
+													}
+													else
+													{
+														echo "<tr>
+																		<td colspan=\"3\">Tiada alamat didaftarkan</td>
+																	</tr>";
+													}
+													?>
+													<tr>
+														<td>
+														<a href="#add-address" data-toggle="modal" title="" class="btn btn-md btn-primary btn-square" data-original-title="Tambah Alamat"><i class="fa fa-plus"></i> Tambah Alamat</a></strong>
+														</td>
+														<td class="text-center">
+															<div class="btn-group btn-group-xs">
+																
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+                                  </div>
+                                    <!-- END Form Buttons -->
+                                </form>
+                                <!-- END Wizard with Validation Content -->
+                            </div>
+                            <!-- END Wizard with Validation Block -->
+						</div>
+
+						<div class="col-sm-12">
+							
+							
+						</div>
+                    </div>
+                </div>
+            </section>
+            <!-- END Form Urus Profil -->
+            
+            <!-- Modal Add Address -->
+        <div id="add-address" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+					<div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Alamat Tempat Peliharaan</h4>
+                    </div>
+					<div class="modal-body">
+						<form id="form-validation" action="<?php echo base_url();?>index.php/manage_profile/save_address" method="post" class="form-horizontal form-bordered">
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="val_email">Alamat <span class="text-danger">*</span></label>
+								<div class="col-md-6">
+									<input type="text" id="val_no_unit" name="val_no_unit" class="form-control" value="" placeholder="No.Rumah / No.Unit" required>
+								</div>
+								<div class="col-md-6  col-md-offset-4">
+									<input type="text" id="val_name_house" name="val_name_house" class="form-control" value="" placeholder="Apartment/ Kondo / Taman / Kampung" required>
+								</div>
+								<div class="col-md-6  col-md-offset-4">
+									<input type="text" id="val_street" name="val_street" class="form-control" placeholder="Jalan / Lorong" required>
+								</div>
+								
+								<div class="col-md-6  col-md-offset-4">
+									<input type="text" id="val_town" name="val_town" class="form-control" placeholder="Kawasan / Bandar" required>
+								</div>
+								<div class="col-md-6  col-md-offset-4">
+									<input type="text" id="val_postcode" name="val_postcode" class="form-control" placeholder="Poskod" required>
+								</div>
+								<div class="col-md-6  col-md-offset-4">
+										<select id="val_parlimen" name="val_parlimen" class="form-control" size="1">
+											<option value="0">Sila pilih parlimen</option>
+											<?php 
+											foreach($PARLIMEN as $PAR)
+											{
+												echo "<option value='".$PAR->par_id."'>".$PAR->par_name."</option>";
+											}
+											?>
+										</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="example-select">Jenis Rumah<span class="text-danger">*</span></label>
+								<div class="col-md-6">
+									<select id="val_house_type" name="val_house_type" class="form-control" size="1">
+										<option value="0">Sila pilih jenis rumah</option>
+										<?php 
+										foreach($HOUSE_TYPE as $HT)
+										{
+											echo "<option value='".$HT->hid."'>".$HT->name."</option>";
+										}
+										?>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="example-select">Keluasan Rumah<span class="text-danger">*</span></label>
+								<div class="col-md-6">
+									<select id="house_space" name="house_space" class="form-control" size="1">
+										<option value="0">Sila pilih keluasan rumah</option>
+										<?php 
+										foreach($HOUSE_SPACE as $HS)
+										{
+											echo "<option value='".$HS->hsid."'>".$HS->name."</option>";
+										}
+										?>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label">Rumah Anjing<span class="text-danger">*</span></label>
+								<div class="col-md-6">
+									<label class="radio-inline" for="example-inline-radio1">
+										<input type="radio" id="house_dog1" name="house_dog" value="1"> Ada
+									</label>
+									<label class="radio-inline" for="example-inline-radio2">
+										<input type="radio" id="house_dog2" name="house_dog" value="0"> Tiada
+									</label>
+								</div>
+							</div>
+							<!-- Form Buttons -->
+							<div class="form-group form-actions">
+								<div class="col-md-8 col-md-offset-4">
+									<button type="reset" class="btn btn-square btn-sm btn-warning" id="add-dog" value="Padam"><i class="fa fa-repeat"></i> Padam</button>
+									<button type="submit" class="btn btn-square btn-sm btn-primary" id="add-dog" value="Simpan"><i class="fa fa-save"></i> Simpan</button>
+								</div>
+							</div>
+							<!-- END Form Buttons -->
+						</form>
+             </div>
+                </div>
+            </div>
+        </div>       
+        <!-- END Modal Add Address -->
+				
+				<!-- Modal Edit Address -->
+        <div id="edit-address" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+					<div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Alamat Tempat Peliharaan</h4>
+                    </div>
+					<div class="modal-body">
+						<form id="form-validation" action="<?php echo base_url();?>index.php/manage_profile/update_address" method="post" class="form-horizontal form-bordered">
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="val_email">Alamat <span class="text-danger">*</span></label>
+								<div class="col-md-6">
+									<input type="text" id="val_no_unit" name="val_no_unit" class="form-control" value="" placeholder="No.Rumah / No.Unit" required>
+								</div>
+								<div class="col-md-6  col-md-offset-4">
+									<input type="text" id="val_name_house" name="val_name_house" class="form-control" value="" placeholder="Apartment/ Kondo / Taman / Kampung" required>
+								</div>
+								<div class="col-md-6  col-md-offset-4">
+									<input type="text" id="val_street" name="val_street" class="form-control" placeholder="Jalan / Lorong" required>
+								</div>
+								
+								<div class="col-md-6  col-md-offset-4">
+									<input type="text" id="val_town" name="val_town" class="form-control" placeholder="Kawasan / Bandar" required>
+								</div>
+								<div class="col-md-6  col-md-offset-4">
+									<input type="text" id="val_postcode" name="val_postcode" class="form-control" placeholder="Poskod" required>
+								</div>
+								<div class="col-md-6  col-md-offset-4">
+										<select id="val_parlimen" name="val_parlimen" class="form-control" size="1">
+											<option value="0">Sila pilih parlimen</option>
+											<?php 
+											foreach($PARLIMEN as $PAR)
+											{
+												echo "<option value='".$PAR->par_id."'>".$PAR->par_name."</option>";
+											}
+											?>
+										</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="example-select">Jenis Rumah<span class="text-danger">*</span></label>
+								<div class="col-md-6">
+									<select id="val_house_type" name="val_house_type" class="form-control" size="1">
+										<option value="0">Sila pilih jenis rumah</option>
+										<?php 
+										foreach($HOUSE_TYPE as $HT)
+										{
+											echo "<option value='".$HT->hid."'>".$HT->name."</option>";
+										}
+										?>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label" for="example-select">Keluasan Rumah<span class="text-danger">*</span></label>
+								<div class="col-md-6">
+									<select id="house_space" name="house_space" class="form-control" size="1">
+										<option value="0">Sila pilih keluasan rumah</option>
+										<?php 
+										foreach($HOUSE_SPACE as $HS)
+										{
+											echo "<option value='".$HS->hsid."'>".$HS->name."</option>";
+										}
+										?>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 control-label">Rumah Anjing<span class="text-danger">*</span></label>
+								<div class="col-md-6">
+									<label class="radio-inline" for="example-inline-radio1">
+										<input type="radio" id="house_dog1" name="house_dog" value="1"> Ada
+									</label>
+									<label class="radio-inline" for="example-inline-radio2">
+										<input type="radio" id="house_dog2" name="house_dog" value="0"> Tiada
+									</label>
+								</div>
+							</div>
+							<input type="hidden" name="addressID" id="addressID" value="" />
+							<!-- Form Buttons -->
+							<div class="form-group form-actions">
+								<div class="col-md-8 col-md-offset-4">
+									
+									<button type="submit" class="btn btn-square btn-sm btn-primary" id="update-dog" value="Kemaskini"><i class="fa fa-save"></i> Kemaskini</button>
+								</div>
+							</div>
+							<!-- END Form Buttons -->
+						</form>
+             </div>
+                </div>
+            </div>
+        </div>       
+        <!-- END Modal Edit Address -->
+        
+        <!-- Load and execute javascript code used only in this page -->
+        <script src="<?php echo base_url();?>js/pages/formsWizard.js"></script>
+        <script>$(function(){ FormsWizard.init(); });</script>

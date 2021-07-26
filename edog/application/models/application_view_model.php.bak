@@ -1,0 +1,21 @@
+<?php
+
+class Application_View_Model extends CI_Model
+{
+		public function __construct()
+		{
+				parent::__construct();
+		}
+		
+		public function get_application_info($appID)
+		{
+				$this->db->select('*, application.status AS statusAp;')
+								 ->from('application')
+								 ->join('address', 'application.addr_id = address.addr_id')
+								 ->where(array('application.app_id' => $appID));
+								 
+				$data = $this->db->get();
+				
+				return $data->result();
+		}
+}

@@ -1,0 +1,259 @@
+<!-- Page Title -->
+			<section class="site-heading site-section-top">
+				<div class="header-section dashboard">
+					<div class="container">
+						<h1>Pembaharuan Lesen</h1>
+					</div>
+				</div>
+			</section>
+			<!-- END Page Title -->
+
+            <!-- Company Info -->
+            <section class="site-section site-content-single">
+                <div class="container">
+                    <div class="row">
+                    	<form action="<?php echo base_url();?>index.php/renewal/save_renewal" method="post" class="form-horizontal">           
+						<div class="col-sm-12">
+							<div class="table-responsive">
+								<h3>Butiran Alamat Tempat Peliharaan</h3>
+								<hr>
+								<table class="table table-borderless table-vcenter">
+									<tbody>
+										<tr>
+											<td style="width: 170px;"><strong>Alamat</strong></td>
+											<td><?php echo $address[0]->no_unit.", ".$address[0]->home_name.", ".$address[0]->street_name.", ".$address[0]->town_name.", ".get_parlimen_name($address[0]->parlimen).", ".$address[0]->postcode." Kuala Lumpur"; ?> </td>
+										</tr>
+										<tr>
+											<td><strong>Dokumen Sokongan</strong></td>
+											<?php 
+											if( $address[0]->doc_support == "" )
+											{
+											?>
+											<td>Tidak diperlukan </td>
+											<?php
+											}
+											else
+											{
+											?>
+											<td><input type="file" id="doc_support" name="doc_support"></td>
+											<?php
+											}
+											?>
+										</tr>
+									</tbody>
+								</table>
+								<hr>
+							</div>
+						</div>
+						<?php 
+						$dog = get_total_dog($address[0]->app_id);
+						?>
+						<!-- Butiran Anjing #1 -->
+						<div class="col-sm-6">
+							<div class="block bordered">
+                                <!-- Anjing #1 Title -->
+                                <div class="block-title">
+                                    <h2>Butiran Anjing Peliharaan <strong>#1</strong></h2>
+                                </div>
+                                <!-- END Title -->
+
+                                <!-- Form Anjing #1 Content -->
+                                <form action="renew_license_yes.html" method="post" class="form-horizontal form-bordered">
+                                    <div class="form-group">
+										<label class="col-md-4 control-label" for="val_username">Jenis / Baka <span class="text-danger">*</span></label>
+										<div class="col-md-6">
+											<p class="form-control-static">Biasa</p>
+										</div>
+										
+										<label class="col-md-4 control-label" for="val_username">Warna <span class="text-danger">*</span></label>
+										<div class="col-md-6">
+											<p class="form-control-static">Kelabu</p>
+										</div>
+										
+										<label class="col-md-4 control-label">Jantina</label>
+										<div class="col-md-6">
+											<p class="form-control-static">Jantan</p>
+										</div>
+										
+										<label class="col-md-4 control-label" for="example-select">Berat</label>
+										<div class="col-md-6">
+											<p class="form-control-static">Kurang dari 10kg (22 pound)</p>
+										</div>
+										
+										<label class="col-md-4 control-label">Pemandulan</label>
+										<div class="col-md-6">
+											<p class="form-control-static">Ya</p>
+										</div>
+										
+										<label class="col-md-4 control-label">Mikrocip</label>
+										<div class="col-md-6">
+											<p class="form-control-static">DBKL-CIP-2014-27-A</p>
+										</div>
+										
+										<label class="col-md-8 control-label">Pemilik telah menghadiri latihan atau kursus pemeliharaan haiwan.</label>
+										<div class="col-md-3">
+											<p class="form-control-static">Ya</p>
+										</div>
+										<label class="col-md-8 control-label">Anjing telah menjalani latihan "good behaviour and obedience".</label>
+										<div class="col-md-3">
+											<p class="form-control-static">Ya</p>
+										</div>
+									</div>
+									<div class="form-group">
+                                        <label class="col-md-4 control-label">Gambar Anjing</label>
+										<div class="col-md-7">
+											<p class="form-control-static"><img src="img/logo_lesenanjingdbkl_sm.png"></p>
+										</div>
+                                    </div>
+									<div class="form-group form-actions">
+                                        <div class="col-md-8 col-md-offset-4">
+                                            <a href="#update-renew-1" id="update-renew1" class="btn btn-square btn-sm btn-primary" data-toggle="modal" value="Update"><i class="fa fa-refresh"></i> Kemaskini Maklumat</a>
+                                        </div>
+                                    </div>
+									<!-- Checkbox -->
+									<div class="form-group form-footer">
+                                        <div class="col-md-12">
+                                            <div class="checkbox">
+                                                <label for="example-checkbox2">
+                                                    <input type="checkbox" id="tick-not-renew1" name="tick-not-renew1" value="option1"> Klik untuk tidak meneruskan pembaharuan lesen atas anjing tersebut.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="list-reason1" style="display:none">
+                                    	<div class="col-md-12">
+																				<label class="control-label" for="example-select">Nyatakan sebab untuk tidak perbaharui lesen bagi anjing ini.</label>
+																			</div>
+																			<div class="col-md-12">
+																				<select id="reasons" name="reasons" class="form-control" size="1">
+																					<option value="0">Please select</option>
+																					<?php 
+																					foreach($reason as $reasons)
+																					{
+																						echo "<option value=\"".$reasons->reason_id."\">".$reasons->reason."</option>";
+																					}
+																					?>
+																				</select>
+																			</div>
+																		</div>
+                                </form>
+                                <!-- END Form Anjing #2 Content -->
+                            </div>
+						</div>
+						<!-- END Butiran Anjing #1 -->
+						
+						<!-- Butiran Anjing #2 -->
+						<div class="col-sm-6">
+							<div class="block bordered">
+                                <!-- Anjing #2 Title -->
+                                <div class="block-title">
+                                    <h2>Butiran Anjing Peliharaan <strong>#2</strong></h2>
+                                </div>
+                                <!-- END Anjing #2 Title -->
+
+                                <!-- Form Anjing #2 Content -->
+                                <form action="renew_license_yes.html" method="post" class="form-horizontal form-bordered">
+                                    <div class="form-group">
+										<label class="col-md-4 control-label" for="val_username">Jenis / Baka <span class="text-danger">*</span></label>
+										<div class="col-md-6">
+											<p class="form-control-static">Biasa</p>
+										</div>
+										
+										<label class="col-md-4 control-label" for="val_username">Warna <span class="text-danger">*</span></label>
+										<div class="col-md-6">
+											<p class="form-control-static">Kelabu</p>
+										</div>
+										
+										<label class="col-md-4 control-label">Jantina</label>
+										<div class="col-md-6">
+											<p class="form-control-static">Jantan</p>
+										</div>
+										
+										<label class="col-md-4 control-label" for="example-select">Berat</label>
+										<div class="col-md-6">
+											<p class="form-control-static">Kurang dari 10kg (22 pound)</p>
+										</div>
+										
+										<label class="col-md-4 control-label">Pemandulan</label>
+										<div class="col-md-6">
+											<p class="form-control-static">Ya</p>
+										</div>
+										
+										<label class="col-md-4 control-label">Mikrocip</label>
+										<div class="col-md-6">
+											<p class="form-control-static">DBKL-CIP-2014-27-A</p>
+										</div>
+										
+										<label class="col-md-8 control-label">Pemilik telah menghadiri latihan atau kursus pemeliharaan haiwan.</label>
+										<div class="col-md-3">
+											<p class="form-control-static">Ya</p>
+										</div>
+										<label class="col-md-8 control-label">Anjing telah menjalani latihan "good behaviour and obedience".</label>
+										<div class="col-md-3">
+											<p class="form-control-static">Ya</p>
+										</div>
+									</div>
+									<div class="form-group">
+                                        <label class="col-md-4 control-label">Gambar Anjing</label>
+										<div class="col-md-7">
+											<p class="form-control-static"><img src="img/logo_lesenanjingdbkl_sm.png"></p>
+										</div>
+                                    </div>
+									<div class="form-group form-actions">
+                                        <div class="col-md-8 col-md-offset-4">
+                                            <a href="#update-renew-2" id="update-renew2" class="btn btn-square btn-sm btn-primary" data-toggle="modal" value="Update"><i class="fa fa-refresh"></i> Kemaskini Maklumat</a>
+                                        </div>
+                                    </div>
+									<!-- Checkbox -->
+									<div class="form-group form-footer">
+                                        <div class="col-md-12">
+                                            <div class="checkbox">
+                                                <label for="example-checkbox1">
+                                                    <input type="checkbox" id="tick-not-renew2" name="tick-not-renew2" value="option1"> Klik untuk tidak meneruskan pembaharuan lesen atas anjing tersebut.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="list-reason2" style="display:none">
+                                    	<div class="col-md-12">
+																				<label class="control-label" for="example-select">Nyatakan sebab untuk tidak perbaharui lesen bagi anjing ini.</label>
+																			</div>
+																			<div class="col-md-12">
+																				<select id="reasons2" name="reasons2" class="form-control" size="1">
+																					<option value="0">Please select</option>
+																					<?php 
+																					foreach($reason as $reasons)
+																					{
+																						echo "<option value=\"".$reasons->reason_id."\">".$reasons->reason."</option>";
+																					}
+																					?>
+																				</select>
+																			</div>
+																		</div>
+                                </form>
+                                <!-- END Form Anjing #2 Content -->
+                            </div>
+						</div>
+						<!-- END Butiran Anjing #2 -->
+						
+						<!-- END Hantar Permohonan -->
+						<div class="col-sm-12">
+							<hr>
+
+								<div class="form-group">
+									<div class="col-md-12">
+										<div class="checkbox">
+											<label for="val_dogcolor_blk">
+												<input type="checkbox" id="val_dogcolor_blk" name="val_dogcolor_blk" value="option1" > Saya bersetuju semua peruntukan dibawah Undang-undang Kecil Pelesenan Anjing dan Rumah Pembiakan Anjing (Wilayah Persekutuan)
+											</label>
+											<button type="submit" class="btn btn-square btn-sm btn-primary pull-right" id="add-dog" value="Simpan"><i class="fa fa-save"></i> Hantar Permohonan</button>
+										</div>
+									</div>
+								</div>
+							
+						</div>
+						</form>
+                    </div>
+                </div>
+            </section>
+            <!-- END Company Info -->

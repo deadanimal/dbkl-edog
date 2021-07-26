@@ -1,0 +1,72 @@
+[17-Nov-2014 15:48:37 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/lavakode/public_html/edog/admin/config/config.php on line 30
+[17-Nov-2014 15:48:42 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/lavakode/public_html/edog/admin/config/config.php on line 30
+[18-Nov-2014 09:46:06 Asia/Kuala_Lumpur] PHP Fatal error:  Cannot redeclare class Dashboard_Admin in /home/lavakode/public_html/edog/admin/models/dashboard_admin_model.php on line 17
+[18-Nov-2014 09:46:12 Asia/Kuala_Lumpur] PHP Fatal error:  Cannot redeclare class Dashboard_Admin in /home/lavakode/public_html/edog/admin/models/dashboard_admin_model.php on line 17
+[18-Nov-2014 09:47:05 Asia/Kuala_Lumpur] PHP Fatal error:  Cannot redeclare class Dashboard_Admin in /home/lavakode/public_html/edog/admin/models/dashboard_admin_model.php on line 17
+[18-Nov-2014 10:21:29 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/admin/helpers/common_helper.php on line 15
+[18-Nov-2014 11:35:13 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/admin/helpers/common_helper.php on line 365
+[18-Nov-2014 11:50:30 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function admin_url() in /home/lavakode/public_html/edog/admin/views/dashboard_admin.php on line 123
+[18-Nov-2014 12:04:48 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function get_all_info_by_app_id() in /home/lavakode/public_html/edog/admin/controllers/new_app.php on line 14
+[18-Nov-2014 12:24:06 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/admin/helpers/common_helper.php on line 378
+[18-Nov-2014 13:11:43 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '/' in /home/lavakode/public_html/edog/admin/views/dashboard_admin.php on line 127
+[18-Nov-2014 14:51:48 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined method New_App_Model::get_sum_of_new_app() in /home/lavakode/public_html/edog/admin/controllers/new_app_list.php on line 15
+[19-Nov-2014 11:32:35 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_ELSE in /home/lavakode/public_html/edog/admin/views/new_app.php on line 412
+[19-Nov-2014 12:07:58 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/admin/helpers/common_helper.php on line 403
+[20-Nov-2014 17:38:28 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ';' in /home/lavakode/public_html/edog/admin/models/approved_model.php on line 24
+[21-Nov-2014 10:57:10 Asia/Kuala_Lumpur] PHP Fatal error:  Using $this when not in object context in /home/lavakode/public_html/edog/admin/helpers/common_helper.php on line 428
+[21-Nov-2014 14:52:33 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 14:52:40 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 14:53:27 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 14:54:20 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 14:56:43 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 14:58:49 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 14:58:57 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 14:59:42 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 15:33:44 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 15:44:14 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 15:57:41 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 15:57:48 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 15:57:58 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 16:07:52 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 16:07:59 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 16:08:37 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 16:09:03 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 16:09:06 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 16:11:20 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 16:14:00 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 16:15:11 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 16:16:00 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function get_address_registered() on a non-object in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 46
+[21-Nov-2014 18:23:53 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_IF, expecting ',' or ';' in /home/lavakode/public_html/edog/admin/views/user_management.php on line 69
+[24-Nov-2014 01:54:20 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /home/lavakode/public_html/edog/admin/models/user_management_model.php on line 57
+[24-Nov-2014 01:58:20 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /home/lavakode/public_html/edog/admin/models/user_management_model.php on line 57
+[24-Nov-2014 01:58:24 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /home/lavakode/public_html/edog/admin/models/user_management_model.php on line 57
+[24-Nov-2014 01:59:05 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /home/lavakode/public_html/edog/admin/models/user_management_model.php on line 57
+[24-Nov-2014 02:33:39 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_IF in /home/lavakode/public_html/edog/admin/libraries/menu.php on line 51
+[24-Nov-2014 02:34:03 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_IF in /home/lavakode/public_html/edog/admin/libraries/menu.php on line 51
+[24-Nov-2014 02:34:05 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_IF in /home/lavakode/public_html/edog/admin/libraries/menu.php on line 51
+[24-Nov-2014 02:34:29 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_IF in /home/lavakode/public_html/edog/admin/libraries/menu.php on line 51
+[24-Nov-2014 02:34:53 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_IF in /home/lavakode/public_html/edog/admin/libraries/menu.php on line 51
+[24-Nov-2014 14:54:01 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ',' or ';' in /home/lavakode/public_html/edog/admin/views/dashboard_admin.php on line 121
+[25-Nov-2014 16:43:34 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function get_dog_details() in /home/lavakode/public_html/edog/admin/views/view_app.php on line 161
+[26-Nov-2014 18:59:08 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function sha1() on a non-object in /home/lavakode/public_html/edog/admin/models/manage_profile_model.php on line 58
+[26-Nov-2014 18:59:29 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function sha1() on a non-object in /home/lavakode/public_html/edog/admin/models/manage_profile_model.php on line 58
+[26-Nov-2014 19:10:23 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function sha1() on a non-object in /home/lavakode/public_html/edog/admin/models/manage_profile_model.php on line 58
+[26-Nov-2014 22:20:56 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function sha1() on a non-object in /home/lavakode/public_html/edog/admin/models/manage_profile_model.php on line 58
+[26-Nov-2014 23:45:02 Asia/Kuala_Lumpur] PHP Fatal error:  Call to a member function sha1() on a non-object in /home/lavakode/public_html/edog/admin/models/manage_profile_model.php on line 58
+[28-Nov-2014 11:16:52 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function get_parliment_name() in /home/lavakode/public_html/edog/admin/views/data_reference.php on line 58
+[28-Nov-2014 17:50:58 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ',' in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 133
+[28-Nov-2014 17:51:03 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ',' in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 133
+[28-Nov-2014 17:51:08 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ',' in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 133
+[28-Nov-2014 17:52:19 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ',' in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 133
+[28-Nov-2014 17:54:23 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ',' in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 133
+[28-Nov-2014 17:55:26 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ',' in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 133
+[28-Nov-2014 18:00:55 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ',' in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 133
+[28-Nov-2014 18:02:34 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ',' in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 133
+[28-Nov-2014 18:06:01 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected ',' in /home/lavakode/public_html/edog/admin/controllers/user_management.php on line 133
+[01-Dec-2014 11:37:33 Asia/Kuala_Lumpur] PHP Fatal error:  Call to undefined function get_log() in /home/lavakode/public_html/edog/admin/views/dashboard_admin.php on line 19
+[02-Dec-2014 11:35:53 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '{' in /home/lavakode/public_html/edog/admin/views/dashboard_admin.php on line 21
+[02-Dec-2014 11:38:20 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '<' in /home/lavakode/public_html/edog/admin/views/dashboard_admin.php on line 28
+[02-Dec-2014 11:39:07 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected '<' in /home/lavakode/public_html/edog/admin/views/dashboard_admin.php on line 28
+[19-Dec-2014 11:59:04 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting ',' or ';' in /home/lavakode/public_html/edog/admin/views/view_app.php on line 412
+[19-Dec-2014 12:00:21 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting ',' or ';' in /home/lavakode/public_html/edog/admin/views/view_app.php on line 275
+[13-Oct-2017 12:12:45 Asia/Kuala_Lumpur] PHP Warning:  POST Content-Length of 17360269 bytes exceeds the limit of 8388608 bytes in Unknown on line 0

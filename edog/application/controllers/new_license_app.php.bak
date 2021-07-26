@@ -1,0 +1,216 @@
+<?php
+
+class New_License_App extends CI_Controller {
+	
+	public function __construct() 
+	{
+		parent::__construct();
+		$this->no_cache();
+		$this->load->model('manage_profile_model');
+		$this->load->model('new_license_app_model');
+	}
+	
+	public function index() 
+	{
+		if( $this->session->userdata("isLoggedIn") )
+		{ 
+			  $addrID = $this->uri->segment(3);
+			  $data['address'] = $this->manage_profile_model->get_address($addrID);
+			  
+				$this->template->write_view("content","new_license_app", $data, TRUE);
+				$this->template->parse_template = TRUE;
+				$this->template->render();	
+		}
+			
+		else{
+			redirect('login');
+		}
+	}
+	
+	public function save_temporary()
+	{
+		$config['upload_path'] = './doc/pic/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_width']  = '1024';
+		$config['max_height']  = '768';
+		
+		$this->load->library('upload', $config);
+
+		
+		if(is_uploaded_file($_FILES['pic_dog']['tmp_name']))
+		{
+			if(! $this->upload->do_upload('pic_dog'))
+			{
+	
+				echo "<script type=\"text/javascript\">";
+				echo "alert('".$this->upload->display_errors('', '')."');";
+				echo "window.location.href='".base_url()."index.php/new_license_app/index/".$this->input->post('addrID')."';";
+				echo "</script>";
+				exit;
+				
+			}
+			else
+			{
+					$dataUpload = $this->upload->data();
+					$this->new_license_app_model->save_temporary_dog($dataUpload['orig_name']);
+			}
+		}
+		else
+		{
+			$this->new_license_app_model->save_temporary_dog($target = null);
+		}
+			
+			redirect('new_license_app/index/'.$this->input->post('addrID'));
+	}
+	
+	public function get_data_temporary_dog()
+	{
+			$addrID = $this->uri->segment(3);
+			$dogID = $this->uri->segment(4);
+
+			$data = $this->new_license_app_model->data_temporary($addrID,$dogID);
+			$arr = null;
+			
+			foreach($data as $row)
+			{
+				 $arr .= $row->dog_type."|".$row->dog_color."|".$row->dog_gender."|".$row->dog_weight."|".$row->dog_mandul."|".$row->dog_microchip."|".$row->owner_training."|".$row->dog_training."|".$row->pic_dog;
+			}
+			
+			echo $arr;
+	}
+	
+	public function update_temporary_dog()
+	{
+		$config['upload_path'] = './doc/pic/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_width']  = '1024';
+		$config['max_height']  = '768';
+		
+		$this->load->library('upload', $config);
+		
+		if(is_uploaded_file($_FILES['pic_dog']['tmp_name']))
+		{
+			if(! $this->upload->do_upload('pic_dog'))
+			{
+				echo "<script type=\"text/javascript\">";
+				echo "alert('".$this->upload->display_errors('', '')."');";
+				echo "window.location.href='".base_url()."index.php/new_license_app/index/".$this->input->post('addrID')."';";
+				echo "</script>";
+				exit;
+			}
+			else
+			{
+					
+					$dataUpload = $this->upload->data();
+					$this->new_license_app_model->update_temporary($dataUpload['orig_name']);
+					unlink($this->input->post('loc_pic'));
+			}
+		}
+		else
+		{
+			$this->new_license_app_model->update_temporary($target = null);
+		}
+			
+			
+			redirect('new_license_app/index/'.$this->input->post('addrID'));
+	}
+	
+	public function cancel_temporary_dog()
+	{
+			$dog = $this->uri->segment(3);
+			$addr = $this->uri->segment(4);
+			
+			$result = $this->new_license_app_model->cancel_temporary($dog, $addr);
+			echo $result;
+	}
+	
+	public function save_new_application()
+	{	
+		$config['upload_path'] = './doc/support/';
+		$config['allowed_types'] = 'doc|pdf';
+		$config['max_width']  = '1024';
+		$config['max_height']  = '768';
+		
+		$this->load->library('upload', $config);
+		
+			if( $this->input->post('doc_type') == 1 )
+			{
+				if(is_uploaded_file($_FILES['doc_support']['tmp_name']))
+				{
+					if(! $this->upload->do_upload('doc_support'))
+					{
+						echo "<script type=\"text/javascript\">";
+						echo "alert('".$this->upload->display_errors('', '')."');";
+						echo "window.location.href='".base_url()."index.php/new_license_app/index/".$this->input->post('addrID')."';";
+						echo "</script>";
+						exit;
+					}
+					else
+					{
+						$docUpload = $this->upload->data();
+						$app_no = $this->new_license_app_model->save_new_application($docUpload['orig_name']);
+						
+						$content = null;
+								
+						$content .= $this->session->userdata('name').",<br></br>";
+						$content .= "Terima Kasih kerana mendaftar lessen anjing menggunakan portal Sistem Pengurusan Lesen Anjing – DBKL. Permohonan anda akan disemak oleh pegawai kami secepat mungkin<br></br>";
+						$content .= "Nombor permohonan anda adalah seperti berikut:<br><br>";
+						$content .= "<b>No Permohonan</b> : ".$app_no."<br>";
+						$content .= "<b>Tarikh Permohonan</b> : ".date('d/m/Y H:i A')."<br></br>";
+						
+						$content .= "E-mel ini dijana oleh komputer dan tidak perlu dibalas<br><br>";
+						$content .= "Pentadbir<br>Sistem Pengurusan Lesen Anjing - DBKL";
+					}
+				}
+			}
+			else
+			{
+				$this->new_license_app_model->save_new_application($target = '');
+				
+				$content = null;
+								
+				$content .= $this->session->userdata('name').",<br></br>";
+				$content .= "Terima Kasih kerana mendaftar lessen anjing menggunakan portal Sistem Pengurusan Lesen Anjing – DBKL.<br></br>";
+				$content .= "Nombor permohonan anda adalah seperti berikut:<br><br>";
+				$content .= "<b>No Permohonan</b> : ".$app_no."<br>";
+				$content .= "<b>Tarikh Permohonan</b> : ".date('d/m/Y H:i A')."<br></br>";
+				
+				$content .= "E-mel ini dijana oleh komputer dan tidak perlu dibalas<br><br>";
+				$content .= "Pentadbir<br>Sistem Pengurusan Lesen Anjing - DBKL";
+			}
+			
+				
+				
+				
+				$mail = new PHPMailer();
+				$mail->IsHTML(true);
+        $mail->IsSMTP(); // we are going to use SMTP
+        $mail->SMTPAuth   = true; // enabled SMTP authentication
+        $mail->SMTPDebug = 1;
+        $mail->SMTPSecure = "ssl";  // prefix for secure protocol to connect to the server
+        $mail->Host       = "smtp.gmail.com";      // setting GMail as our SMTP server
+        $mail->Port       = 465;                   // SMTP port to connect to GMail
+        $mail->Username   = "hafidzulamin.zulkifli@gmail.com";  // user email address
+        $mail->Password   = "aa860620";            // password in GMail
+        $mail->SetFrom('admin@e-dog.dbkl.gov.my', 'DBKL Support');  //Who is sending the email
+        $mail->AddAddress("hafidzulamin@hotmail.com", "Hafidzul Amin");
+        //$mail->AddReplyTo("hafidzulamin@hotmail.com","Hafidzul Amin");  //email address that receives the response
+        
+        $mail->Subject    = "Pendaftaran di Sistem Pengurusan Lesen Anjing - DBKL";
+        $mail->Body      = $content;
+        
+        //$mail->AltBody    = "Plain text message";
+       	
+       	
+				$mail->Send();
+
+	}
+	
+	public function no_cache() 
+	{
+		  $this->output->set_header('Last-Modified: ' . gmdate("D, d M Y H:i:s") . ' GMT');
+		  $this->output->set_header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0');
+		  $this->output->set_header('Pragma: no-cache');
+		  $this->output->set_header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+	}
+}

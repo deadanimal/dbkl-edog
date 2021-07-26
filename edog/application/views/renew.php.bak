@@ -1,0 +1,146 @@
+  <!-- Page Title -->
+			<section class="site-heading site-section-top">
+				<div class="header-section dashboard">
+					<div class="container">
+						<h1>Pembaharuan Lesen</h1>
+					</div>
+				</div>
+			</section>
+			<!-- END Page Title -->
+
+            <!-- Company Info -->
+            <section class="site-section site-content-single">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-sm-12">
+                            <div class="site-block">
+								<h5><strong>Nama: </strong><?php echo $this->session->userdata('name');?></h5>
+								<h5><strong>No. Kad Pengenalan: </strong><?php echo $this->session->userdata('nric');?></h5>
+								
+								<?php
+								$no = 1;
+								foreach($ADDRESS as $addr)
+								{
+								?>
+								<!-- START: For address #1 -->
+								<hr>
+								<div class="widget">
+										<?php echo "<strong>Alamat #".$no."</strong> :  ".$addr->no_unit.",&nbsp; ".ucwords(strtolower($addr->home_name)).",&nbsp; ".ucwords(strtolower($addr->street_name)).",&nbsp; ".ucwords(strtolower($addr->town_name)).",&nbsp; ".get_parlimen_name($addr->parlimen).",&nbsp".$addr->postcode."."; ?>
+								</div>
+								<table class="table table-bordered table-striped">
+									<thead>
+										<tr class="warning">
+											<td style="width: 30px;"><strong>Bil</strong></td>
+											<td><strong>No. Permohonan</strong></td>
+											<td class="text-center"><strong>Tarikh Lesen Mula</strong></td>
+											<td class="text-center"><strong>Tarikh Lesen Tamat</strong></td>
+											<td class="text-center"><strong>Bilangan Anjing Peliharaan</strong></td>
+											<td class="text-center"><strong>Perbaharui Lesen?</strong></td>
+										</tr>
+									</thead>
+									<tbody>
+										<?php 
+										$application = get_dashboard_already_license($addr->addr_id);
+										
+										if( count($application) > 0 )
+										{
+											$no = 1;
+											foreach($application as $app){
+												$total_dog = get_total_dog($app->app_id);
+											?>
+											<tr>
+												<td class="text-center"><?php echo $no; ?></td>
+												<td><a href="<?php echo base_url()."index.php/application_view/index/".$app->app_id; ?>"><strong><?php echo $app->app_no; ?></strong></a></td>
+												<td class="text-center"><?php echo date('d/m/Y', strtotime($app->date_start)); ?></td>
+												<td class="text-center"><?php echo '31/12/'.date('Y');?></td>
+												<td class="text-center"><?php echo count($total_dog);?></td>
+												<td class="text-center">
+													<div class="btn-group btn-group-xs">
+														<a href="<?php echo base_url();?>index.php/renewal/<?php echo $app->app_id;?>" class="btn btn-success">Ya</a>
+														<a href="#not-renew" id="not-renew-app" class="btn btn-danger"  data-id="<?php echo $app->app_id;?>" data-toggle="modal">Tidak</a>
+													</div>
+												</td>
+											</tr>
+											<?php 
+											$no++;
+											}
+										}
+										else
+										{
+										?>
+										<tr>
+											<td colspan="6">Tidak mempunyai lesen</td>	
+										</tr>
+										<?php
+										}
+										?>
+									</tbody>
+								</table>
+								<div class="gap"></div>
+								<?php 
+								$no++;
+								}
+								?>		
+							</div>
+						</div>
+                    </div>
+                </div>
+            </section>
+            <!-- END Company Info -->
+            
+            <!-- Modal Not Renew -->
+        <div id="not-renew" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+					<div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Pembaharuan Lesen: <strong>Tidak</strong></h4>
+                    </div>
+					<div class="modal-body">
+						<form id="form-not-renew" action="<?php echo base_url();?>index.php/renew/save_not_renew" method="post" class="form-horizontal">
+							<div class="form-group">
+								<label class="col-md-5 control-label">Alamat </label>
+								<div class="col-md-7">
+									<p class="form-control-static" id="address"></p>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-5 control-label">Bilangan Anjing Peliharaan </label>
+								<div class="col-md-7">
+									<p class="form-control-static" id="no-dog"> </p>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-5 control-label" for="example-select">Nyatakan sebab tidak perbaharui lesen</label>
+								<div class="col-md-7">
+									<select id="reasons" name="reasons" class="form-control" size="1">
+										<option value="0">Please select</option>
+										<?php 
+										foreach($reason as $reasons)
+										{
+											echo "<option value=\"".$reasons->reason_id."\">".$reasons->reason."</option>";
+										}
+										?>
+									</select>
+								</div>
+							</div>
+							<!-- Form Buttons -->
+							<div class="form-group form-actions">
+								<div class="col-md-6 col-md-offset-5">
+							
+									<button type="button" class="btn btn-square btn-sm btn-primary" id="submit-not-renew" value="Simpan"><i class="fa fa-send"></i> Hantar</button>
+								</div>
+							</div>
+							<input type="hidden" name="appID" id="appID" value="" />
+							<!-- END Form Buttons -->
+						</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END Modal Not Renew -->
+        
+             <!-- Load and execute javascript code used only in this page -->
+        <script src="<?php echo base_url();?>js/pages/formsWizard.js"></script>
+        <script>$(function(){ FormsWizard.init(); });</script>

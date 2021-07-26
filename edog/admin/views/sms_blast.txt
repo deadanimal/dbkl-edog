@@ -1,0 +1,9 @@
+<!-- Page Title -->
+<section class="site-heading site-section-top">
+	<div class="header-section dashboard">
+		<div class="container-fluid">
+			<h1>Pengurusan Laporan</h1>
+		</div>
+	</div>
+</section>
+<!-- END Page Title -->
